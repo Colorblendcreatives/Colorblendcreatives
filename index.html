@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Colorblend Creative</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="MY LOGO.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+
+</head>
+
+<body>
+
+    <div id="loader-wrapper">
+        <div class="loader-content">
+          <!-- Main animated logo -->
+          <svg class="loader-logo" viewBox="0 0 200 200">
+            <circle class="outer-circle" cx="100" cy="100" r="80" stroke="#002180" stroke-width="4" fill="none"/>
+            <circle class="inner-circle" cx="100" cy="100" r="40" stroke="#002180" stroke-width="4" fill="none"/>
+            <!-- Animated dots -->
+            <circle class="dot dot1" cx="100" cy="20" r="6" fill="#002180"/>
+            <circle class="dot dot2" cx="180" cy="100" r="6" fill="#002180"/>
+            <circle class="dot dot3" cx="100" cy="180" r="6" fill="#002180"/>
+            <circle class="dot dot4" cx="20" cy="100" r="6" fill="#002180"/>
+          </svg>
+          <div class="loader-text">
+            <span>C</span>
+            <span>O</span>
+            <span>L</span>
+            <span>O</span>
+            <span>R</span>
+            <span>B</span>
+            <span>L</span>
+            <span>E</span>
+            <span>N</span>
+            <span>D</span>
+          </div>
+        </div>
+      </div>
+    <header>
+<!---------------progress bar-->
+<div class="progress-bar" id="scrollProgressBar"></div>
+<div class="content"></div>
+
+        <!-- place navbar here -->
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <img src="MY LOGO.png" width="32px"/>
+                <a class="navbar-brand" href="#Home">Colorblend Creative</a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#Home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#project">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#testimonial">Testimonial</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        <li class="nav-item ms-3">
+                            <a class="download-cv text-decoration-none" href="https://drive.google.com/file/d/1oEu9vS5n3G0aAUKfk0kr7PRDF0jmBepe/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Download CV</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+    </header><Br>
+    <main>
+<!-------------HERO SECTION------------------>
+
+
+<section id="Home" class="section Home">
+<div class="dots" id="dots"></div>
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col-lg-6">
+            <div class="welcome-tag">Welcome</div>
+            <h1 class="title">I create digital solutions as<br> a <span class="profession" id="profession"></span></h1>
+            <p class="description">I'm a passionate Product Designer and Web Developer. I've been helping businesses solve problems and elevate their brands through creative and functional design solutions.</p>
+                     <a href="#contact" class="contact-btn">Contact me</a>
+
+            <a href="#project" class="work-btn">View my work</a><br><br>
+        </div>
+        <div class="col-lg-6 text-center">
+            <img src="IMG_4370[1].jpg" alt="Profile" class="profile-image">
+        </div>
+    </div>
+    <div class="row stats">
+        <div class="col-md-4 stat-item">
+            <div class="stat-number" id="clients">0</div>
+            <div class="stat-label">Satisfied clients</div>
+        </div>
+        <div class="col-md-4 stat-item">
+            <div class="stat-number" id="projects">0</div>
+            <div class="stat-label">Projects completed</div>
+        </div>
+        <div class="col-md-4 stat-item">
+            <div class="stat-number" id="reviews">0</div>
+            <div class="stat-label">Reviews given</div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!--------About-->
+<section class="about-section" id="about">
+<div class="container" id="About">
+    <div class="row align-items-center">
+        <div class="col-lg-5">
+            <div class="about-image">
+                <img src="IMG_4370[1].jpg" alt="About Me" class="img-fluid about-img">
+                <div class="image-bg"></div><br><br>
+            </div>
+        </div>
+        <div class="col-lg-7">
+            <h2 class="section-title">About Me</h2>
+            <p class="about-text">
+                I'm Ridwanullah, a creative Product Designer and Web Developer with years of experience. I have a passion for crafting intuitive designs that enhance user experiences. My goal is to solve real business challenges through functional and visually appealing solutions. I believe in the power of design and technology to transform ideas into impactful products.
+            </p>
+            <h3 class="skills-title">My Skills</h3>
+    
+            <div class="skills-container">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="skill-item">
+                    <div class="skill-header">
+                      <span>UI/UX DESIGN</span>
+                      <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                  </div>
+
+                        
+                  <div class="skill-item">
+                    <div class="skill-header">
+                      <span>GRAPHIC DESIGN</span>
+                      <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                  </div>
+        
+                  <div class="skill-item">
+                    <div class="skill-header">
+                      <span>FRONTEND DEV.</span>
+                      <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                  </div>
+                </div>
+        
+                
+            </div>
+        
+        <a href="https://www.upwork.com/freelancers/~019c0cba1e77ec36b0" class="contact-btn">CONTACT ME</a>
+            </div>
+          </div>
+</section>
+
+<!-----SkillS-->
+<section class="skills-section" id="skills">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <span class="skills-label">My Skills</span>
+            <h2 class="section-title">Why Hire Me For Your Next <span id="project">Project?</span></h2>
+            <p class="skills-intro">I combine design and development to create user-friendly, visually striking solutions that solve business challenges</p>
+            <a href="https://www.upwork.com/freelancers/~019c0cba1e77ec36b0" class="contact-btn" target="_blank" rel="noopener noreferrer"> Hire Me</a>
+        </div>
+        <br>
+        <div class="col-lg-8">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h3>Visual Design</h3>
+                        <p>Create user interface design with unique & modern ideas</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-bezier-curve"></i>
+                        </div>
+                        <h3>Design Prototype</h3>
+                        <p>Create advance design prototype with Figma apps</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-bezier-curve"></i>
+                        </div>
+                        <h3>UX Research</h3>
+                        <p>Create digital user products with updated ideas</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h3>Responsive Web Design</h3>
+                        <p>Creating websites that look great on all devices and screen sizes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+
+<!-----------------Portfolio-->
+
+<section id="project" class="section project">
+    <div class="container">
+    <span class="portfolio-label">Portfolio</span>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="section-title">My Latest <span id="Creations">Creations</span></h2>
+        <a href="https://www.behance.net/ridwanullahoyelami" class="view-all-btn" target="_blank" rel="noopener noreferrer">View My Behance</a>
+    </div>
+    <p class="portfolio-intro mb-5">
+        I combine design and development to create user-friendly, visually striking solutions that solve business challenges
+    </p>
+    
+    <div class="row">
+        <div class="col-md-4">
+            <div class="portfolio-card">
+                <div class="portfolio-image">
+                    <img src="WEB3.jpg" alt="Project 1" class="img-fluid">
+                </div>
+                <div class="portfolio-content">
+                    <h3 class="label">Web 3 landing page</h3>
+                    <p>A sleek, future-ready Web3 landing page designed for seamless user engagement and decentralized experiences.</p>
+                    <a href="https://www.behance.net/ridwanullahoyelami" class="behance-link" target="_blank" rel="noopener noreferrer">View in Behance →</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="portfolio-card">
+                <div class="portfolio-image">
+                    <img src="Frame 85 (1).png" alt="Project 2" class="img-fluid">
+                </div>
+                <div class="portfolio-content">
+                     <h3>   Project Management Dashbaord</h3>
+                    <p>A streamlined project management dashboard designed to simplify task tracking, team collaboration, and project progress at a glance.</p>
+                    <a href="https://www.behance.net/gallery/209047449/Project-management-dashboard" class="behance-link" target="_blank" rel="noopener noreferrer">View in Behance →</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="portfolio-card">
+                <div class="portfolio-image">
+                    <img src="indulge.png" alt="Project 3" class="img-fluid">
+                </div>
+                <div class="portfolio-content">
+                    <h3>    Hugecircle website</h3>
+                    <p>An elegant and luxurious website design for Higecircle, featuring a sleek user interface and smooth navigation for an upscale dessert experience</p>
+                    <a href="https://www.behance.net/gallery/203471085/HUGECIRCLE-gluten-free-desserts-website" class="behance-link" target="_blank" rel="noopener noreferrer">View in Behance →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section><br><br<br>
+
+<!-----------TEstimonial ------>
+
+<section id="testimonial" class="section section testimonials">
+    <div class="container">
+        <span class="review-label">Reviews</span>
+        <h2 class="section-title">What my Clients are saying <span id="project">About Me</span></h2>
+        <div class="testimonial-slider position-relative mt-5">
+            <div id="testimonialTrack" class="testimonial-track">
+                <div class="testimonial-slide">
+                    <div class="rating mb-4">★★★★★</div>
+                    <p>I'll describe Odun as a Design Whizz kid! He is very clever, intelligent, and diligent. His ability to take initiative to get important things done without being asked to is very impressive. He has an unusual ability to see the bigger picture beyond the obvious- this single attribute led him to ideate and design features that opened up a new revenue stream for the business, that was not thought of prior. He's very much of immense value to any team, and I'm very happy to have him on my team.</p>
+                    <div class="testimonial-author d-flex align-items-center mt-4">
+                        <img src="https://media.licdn.com/dms/image/v2/D4D03AQFAxoYSDEqz0g/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1700882500339?e=1733961600&v=beta&t=gnvSbFyQKywB2eG3I8UGDXTIQgN3KdzC2NSjQdYbFWE" class="rounded-circle">
+                        <div class="author-info ms-3">
+                            <h4 class="mb-0">M.O.A Lawal</h4>
+                            <p>Founder | Effico AI</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-slide">
+                    <div class="rating mb-4">★★★★★</div>
+                    <p>Odunayo Ridwanullah Oyelami worked single-handedly on the design for the BorrowMe a project I am working on, and I was thoroughly impressed by his efficiency and speed. Despite working alone, Odunayo delivered high-quality, user-centric designs in a remarkably short time frame. His ability to grasp the project requirements quickly and translate them into a clean, intuitive interface was exceptional. I highly recommend Odunayo to anyone looking for a designer who is fast, reliable, and capable of producing excellent results on tight schedules.</p>
+                    <div class="testimonial-author d-flex align-items-center mt-4">
+                        <img src="https://media.licdn.com/dms/image/v2/D4E03AQFkpwQZEPw-qg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1722720994764?e=1733961600&v=beta&t=CLHv29lGV6qsl0EBY8_9XQ1Sf2O-EsfZ2ut2ILET4Co" class="rounded-circle">
+                        <div class="author-info ms-3">
+                            <h4 class="mb-0">Solih Akorede Lawal</h4>
+                            <p>Full Stack Developer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-slide">
+                    <div class="rating mb-4">★★★★★</div>
+                    <p>Odunayo delivered exceptional design work. His professionalism and attention to detail exceeded our expectations. I highly recommend him.</p>
+                    <div class="testimonial-author d-flex align-items-center mt-4">
+                        <img src="https://media.licdn.com/dms/image/v2/D4E03AQE1Rv34h5fY7Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1723745916357?e=1733961600&v=beta&t=DwS8Vy9u_zD5E9arOGeziomyN31OLt5JI1qxjp1h1Co" class="rounded-circle">
+                        <div class="author-info ms-3">
+                            <h4 class="mb-0">Gabriel Iruaga</h4>
+                            <p>Founder | Embold Design</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <div class="testimonial-arrows">
+                <button class="arrow-btn prev">←</button>
+                <button class="arrow-btn next">→</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!------------------contact----------------------------------------------------->
+
+<section id="contact" class="section contact">
+<div class="container">
+    <div class="text-center">
+        <span class="contact-label">Contact</span>
+         <h2 class="section-title">Let's Discuss about your <span id="project">Project?</span></h2>
+        <p class="contact-intro">
+            Let's make something new, different and more meaningful or make<br>
+            thing more visual or conceptual
+        </p>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-lg-4">
+            <div class="contact-info">
+                <div class="contact-item d-flex align-items-center mb-4">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="ms-3">
+                        <p class="mb-0 text-muted">Call me</p>
+                        <a href="tel:+2348103397891" class="text-dark text-decoration-none">+2348103397891</a>
+                    </div>
+                </div>
+
+                <div class="contact-item d-flex align-items-center mb-4">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="ms-3">
+                        <p class="mb-0 text-muted">Email me</p>
+                        <a href="mailto:ridoyelami@gmail.com" class="text-dark text-decoration-none">ridoyelami@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="contact-item d-flex align-items-center">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="ms-3">
+                        <p class="mb-0 text-muted">Address</p>
+                        <p class="mb-0 text-dark">Ogun State, Nigeria</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-8">
+            <form class="contact-form">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <input type="text" class="form-control" placeholder="Full name">
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <input type="email" class="form-control" placeholder="Your email">
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <input type="tel" class="form-control" placeholder="Phone number">
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <input type="text" class="form-control" placeholder="Budget">
+                    </div>
+                    <div class="col-12 mb-4">
+                        <textarea class="form-control" rows="5" placeholder="Message"></textarea>
+                    </div>
+                    <div class="col-12 text-end">
+                        <button type="submit" class="submit-btn">Submit Message</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</section>
+
+    </main><br><br>
+    <footer>
+        <!-- place footer here -->
+        <div class="container">
+            <div class="row align-items-center">
+               
+                <div class="text-center">
+                    <p class="designer-credit">
+                        2024. All Rights Reserved<br>Designed and Developed By Ridwanullah
+                    </p>
+                </div>
+            </div>
+            <div class="social-links mt-3 text-end">
+                <a href="https://web.facebook.com/ridwanullah.olayinkaoyelami.9" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/ridwanullah_291" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/odunayouiuxdesigner/" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/colorblend_creative/" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>          
+
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"
+    ></script>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"
+    ></script>
+</body>
+</html>
