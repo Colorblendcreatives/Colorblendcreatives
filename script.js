@@ -28,7 +28,7 @@ window.addEventListener('scroll', function() {
 
 
 // Typewriter effect
-const professions = ['UI/UX Designer', 'Web Developer'];
+const professions = ['UI/UX Designer', 'Front-end Developer','Graphic Designer',];
 let professionIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
