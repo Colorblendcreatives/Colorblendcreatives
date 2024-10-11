@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         loader.style.opacity = '0';
         loader.style.visibility = 'hidden';
         
-        // Remove loader from DOM after animation
+        // Remove loader after animation
         setTimeout(() => {
           loader.remove();
         }, 500);
@@ -24,53 +24,6 @@ window.addEventListener('scroll', function() {
     let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     let scrolled = (winScroll / height) * 100;
     document.getElementById("scrollProgressBar").style.width = scrolled + "%";
-});
-
-// Get all navigation links
-document.addEventListener('DOMContentLoaded', function() {
-    const navLinks = document.querySelectorAll('.nav-links a');
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Get the target section id from the href
-            const targetId = this.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
-            
-            if (targetSection) {
-                // Smooth scroll to the section
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-});
-
-// Optional: Add active class to indicate current section
-window.addEventListener('scroll', function() {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    
-    let currentSection = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        
-        if (pageYOffset >= sectionTop - sectionHeight / 3) {
-            currentSection = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').substring(1) === currentSection) {
-            link.classList.add('active');
-        }
-    });
 });
 
 
@@ -109,11 +62,21 @@ function typeWriter() {
     setTimeout(typeWriter, speed);
 }
 
-// Counter animation
+// Initialize animations
+document.addEventListener('DOMContentLoaded', () => {
+    typeWriter();  // Keep the typewriter effect if you're using it
+    
+    // Counter animations
+    animateCounter(document.getElementById('clients'), 10);
+    animateCounter(document.getElementById('projects'), 50);
+    animateCounter(document.getElementById('reviews'), 34);
+});
+
+// Counter animation function
 function animateCounter(element, target) {
     let current = 0;
     const increment = target / 100;
-    const duration = 4000;
+    const duration = 6000;
     const interval = duration / (target / increment);
 
     const counter = setInterval(() => {
@@ -125,31 +88,6 @@ function animateCounter(element, target) {
         element.textContent = Math.floor(current) + '+';
     }, interval);
 }
-
-// Create dots
-function createDots() {
-    const colors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00'];
-    const dotsContainer = document.getElementById('dots');
-    
-    for (let i = 0; i < 20; i++) {
-        const dot = document.createElement('div');
-        dot.className = 'dot';
-        dot.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        dot.style.left = Math.random() * 100 + '%';
-        dot.style.top = Math.random() * 100 + '%';
-        dotsContainer.appendChild(dot);
-    }
-}
-
-// Initialize
-document.addEventListener('DOMContentLoaded', () => {
-    typeWriter();
-    createDots();
-    animateCounter(document.getElementById('clients'), 10);
-    animateCounter(document.getElementById('projects'), 50);
-    animateCounter(document.getElementById('reviews'), 34);
-});
-
 //Testimonial
 
 document.addEventListener('DOMContentLoaded', function() {
