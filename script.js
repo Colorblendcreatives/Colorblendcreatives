@@ -141,3 +141,58 @@ document.addEventListener('DOMContentLoaded', function() {
     startAutoScroll();
 });
 
+// Form validation
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('.contact-form');
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        let isValid = true;
+
+        // Define validation rules and error messages
+        const validationRules = {
+            fullname: /^[A-Za-z\s]+$/, // Text only
+            email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, // Basic email format
+            phone: /^[0-9+()-\s]+$/, // Numbers, spaces, parentheses, dashes, and plus sign
+            budget: /^[\d\s\p{Sc}.,!@#%^&*()_+=-]+$/u, // Any symbols and numbers
+        };
+
+        const inputs = form.querySelectorAll('input[required], textarea[required]');
+
+        inputs.forEach(input => {
+            const errorSpan = document.getElementById(`${input.id}-error`); // Get the corresponding error span
+            const value = input.value.trim();
+            const rule = validationRules[input.id];
+
+            if (value === '' || (rule && !rule.test(value))) {
+                isValid = false;
+                input.classList.add('is-invalid'); // Add red border
+                input.classList.remove('is-valid'); // Remove valid state
+                errorSpan.textContent = getErrorMessage(input.id); // Display error message
+            } else {
+                input.classList.remove('is-invalid'); // Remove red border
+                input.classList.add('is-valid'); // Add green checkmark state
+                errorSpan.textContent = ''; // Clear error message
+            }
+        });
+
+        if (isValid) {
+            alert("Form submitted successfully!");
+            form.submit(); // Submit form if valid
+        }
+    });
+
+    // Function to return appropriate error message based on input field
+    function getErrorMessage(fieldId) {
+        const messages = {
+            fullname: 'Name must contain only letters and spaces.',
+            email: 'Please enter a valid email address.',
+            phone: 'Phone number can only contain numbers, spaces, and symbols.',
+            budget: 'Budget must contain only numbers, commas, or periods.',
+            message: 'This field is required.'
+        };
+        return messages[fieldId] || 'This field is required.';
+    }
+});
+
