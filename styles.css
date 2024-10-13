@@ -223,9 +223,10 @@ body {
 
 /*Hero section*/
 .hero-section {
-    padding-top: 120px;
+    padding-top: 12px;
     min-height: 100vh;
     position: relative;
+    background-color: #f8f9ff;
 }
 
 
