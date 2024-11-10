@@ -1,9 +1,11 @@
-  * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
+/* Hide conetnt before loading */
 
 #loader-wrapper {
     position: fixed;
@@ -204,6 +206,28 @@ html {
 
 }
 
+/* Bounce Animation */
+@keyframes bounceDown {
+    0% {
+        transform: translateY(-100px); /* Start above the screen */
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(10px); /* Slightly overshoot the final position */
+        opacity: 1;
+    }
+    70% {
+        transform: translateY(-5px); /* Bounce back up a little */
+    }
+    100% {
+        transform: translateY(0); /* Final resting position */
+    }
+}
+
+.navbar {
+    animation: bounceDown 1s ease-out; /* 1-second duration */
+    animation-fill-mode: forwards; /* Keep it in final position after animation */
+}
 
 /*Hero section*/
 .hero-section {
@@ -232,6 +256,7 @@ html {
 
 .profession {
     color: #002180;
+    text-decoration: underline;
 }
 
 .description {
@@ -252,6 +277,58 @@ html {
 
 .contact-btn:hover {
     background: #031a61;
+}
+
+.cursor {
+    display: inline-block;
+    width: 2px; /* Thinner cursor */
+    height: 1em; /* Adjust height to match the text */
+    background-color: #002180; /* Customize color if needed */
+    animation: blink 0.7s steps(1) infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+
+/* Hero section ANimation */
+/* Keyframes for animations */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply animations to elements */
+.hero-section .col-lg-6.text-content {
+    animation: slideInLeft 1s ease forwards;
+}
+
+.hero-section .col-lg-6.image-content {
+    animation: slideInRight 1s ease forwards;
 }
 
 
@@ -404,6 +481,50 @@ html {
         border-radius: 20px;
         transform: scale(1);
     }
+}
+
+/* About Animation */
+.hero-section .col-lg-6.text-content,
+.about-image,
+.about-content {
+    opacity: 0;
+    transform: translateX(0); /* Set their initial position (hidden off-screen or invisible) */
+}
+
+/* Keyframes for animations */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply animations when the class is added */
+.hero-section .col-lg-6.text-content.animate {
+    animation: slideInLeft 1s ease forwards;
+}
+
+.about-image.animate {
+    animation: slideInLeft 1s ease forwards;
+}
+
+.about-content.animate {
+    animation: slideInRight 1s ease forwards;
 }
 
 .image-bg {
@@ -583,6 +704,48 @@ html {
   }
   
 
+/* Animation effect */
+
+/* Initial states */
+.skill-card {
+    opacity: 0;
+    transition: all 0.6s ease;
+}
+
+/* Top left card */
+.skill-card:nth-child(1) {
+    transform: translateY(-100px);
+}
+
+/* Top right card */
+.skill-card:nth-child(2) {
+    transform: translateX(100px);
+}
+
+/* Bottom left card */
+.skill-card:nth-child(3) {
+    transform: translateY(100px);
+}
+
+/* Bottom right card */
+.skill-card:nth-child(4) {
+    transform: translateX(-100px);
+}
+
+/* Active states when elements are visible */
+.col-lg-4.animate,
+.skill-card.animate {
+    opacity: 1;
+    transform: translate(0);
+}
+
+/* Preserve your existing hover effect */
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 33, 128, 0.1);
+}
+
+
 /*portfolio*/
 .portfolio-section {
     position: relative;
@@ -678,6 +841,17 @@ html {
 
 .behance-link:hover {
     color: #031a61;
+}
+
+.section.project {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.5s ease;
+}
+
+.section.project.slide-in {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /*Testimonial*/
@@ -776,6 +950,34 @@ html {
 .arrow-btn.next {
     margin-right: 20px;
 }
+.glass-container {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    padding: 2rem;
+    margin: rem;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.glass-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.2);
+}
+
+/* Optional: Make the content inside more visible */
+.glass-container p {
+    color: #333;
+}
+
+.glass-container .rating {
+    color: #FFD700;
+}
+
+
 
 /*contact*/
 .contact-section {
@@ -871,6 +1073,19 @@ textarea.form-control {
     background: #031a61;
 
 }
+/* Initial state - hidden */
+.section.contact {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+/* Animated state */
+.section.contact.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /*footer*/
 .footer {
     border-top: 1px solid #e0e0e0;
@@ -927,4 +1142,72 @@ textarea.form-control {
     background: #002180;
     border-color: #002180;
     color: white;
+}
+
+@keyframes rushIn {
+    0% {
+        opacity: 0;
+        transform: translateY(calc(50vh + 50%));
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-50%);
+    }
+}
+
+.social-link {
+    animation: rushIn 0.4s ease forwards;
+}
+
+.social-links .social-link:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.social-links .social-link:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.social-links .social-link:nth-child(3) {
+    animation-delay: 0.3s;
+}
+.social-links .social-link:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* Scroll to top triangle */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #002180;  /* Using your theme blue color */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+/* Triangle icon */
+.scroll-to-top::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 12px solid white;  /* Triangle pointing up */
+    transform: rotate(0deg);  /* Rotate to point up */
 }
