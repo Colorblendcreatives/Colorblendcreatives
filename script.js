@@ -14,8 +14,20 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 2000); // Show loader for 2 seconds
     });
   });
+
   
- 
+  
+
+// Scroll to the top on reload and page load
+window.addEventListener('DOMContentLoaded', (event) => {
+    window.scrollTo(0, 0);
+});
+
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+};
+
+
 
 //progressbar//
 
@@ -73,21 +85,135 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Counter animation function
-function animateCounter(element, target) {
-    let current = 0;
-    const increment = target / 100;
-    const duration = 6000;
-    const interval = duration / (target / increment);
+document.addEventListener('DOMContentLoaded', () => {
+    const counters = [
+        { element: document.getElementById('clients'), target: 10 },
+        { element: document.getElementById('projects'), target: 25 },
+        { element: document.getElementById('reviews'), target: 34 },
+    ];
 
-    const counter = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            current = target;
-            clearInterval(counter);
+    // Function to animate the counter
+    function animateCounter(element, target) {
+        let current = 0;
+        const increment = target / 100;
+        const duration = 2000;
+        const interval = duration / (target / increment);
+
+        const counter = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(counter);
+            }
+            element.textContent = Math.floor(current) + '+';
+        }, interval);
+    }
+
+    // Set up Intersection Observer
+    const observerOptions = {
+        threshold: 0.5 // Adjust the visibility threshold as needed
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const counter = counters.find(c => c.element === entry.target);
+                if (counter && counter.element.textContent === '0') { // Start only if the counter is at zero
+                    animateCounter(counter.element, counter.target);
+                }
+                observer.unobserve(entry.target); // Stop observing after the counter starts
+            }
+        });
+    }, observerOptions);
+
+    // Observe each counter element
+    counters.forEach(counter => observer.observe(counter.element));
+});
+
+// About animation
+document.addEventListener("DOMContentLoaded", function () {
+    const textContent = document.querySelector(".hero-section .col-lg-6.text-content");
+    const aboutImage = document.querySelector(".about-image");
+    const aboutContent = document.querySelector(".about-content");
+
+    // Function to check if the element is in the viewport
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return rect.top <= window.innerHeight && rect.bottom >= 0;
+    }
+
+    // Function to add the 'animate' class to trigger the animation
+    function handleScrollAnimation() {
+        if (isElementInViewport(textContent)) {
+            textContent.classList.add("animate");
         }
-        element.textContent = Math.floor(current) + '+';
-    }, interval);
+        if (isElementInViewport(aboutImage)) {
+            aboutImage.classList.add("animate");
+        }
+        if (isElementInViewport(aboutContent)) {
+            aboutContent.classList.add("animate");
+        }
+    }
+
+    // Add the scroll event listener to trigger animations
+    window.addEventListener("scroll", handleScrollAnimation);
+
+    // Call the function on page load to trigger animations if already in viewport
+    handleScrollAnimation();
+});
+
+// Why hire mw
+document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Animate the left content
+                const leftContent = document.querySelector('.col-lg-4');
+                if (leftContent) {
+                    setTimeout(() => {
+                        leftContent.classList.add('animate');
+                    }, 100);
+                }
+
+                // Animate all skill cards with different delays
+                const skillCards = document.querySelectorAll('.skill-card');
+                skillCards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('animate');
+                    }, (index + 2) * 200); // Staggered delay for each card
+                });
+
+                // Disconnect observer after animation
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.2 // Trigger when 20% of the section is visible
+    });
+
+    // Observe the skills section
+    const skillsSection = document.querySelector('.skills-section');
+    if (skillsSection) {
+        observer.observe(skillsSection);
+    }
+});
+
+
+// portfolio
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('slide-in');
+        }
+    });
+}, { threshold: 0.1 });
+
+const portfolioSection = document.querySelector('.section.project');
+if (portfolioSection) {
+    observer.observe(portfolioSection);
 }
+
 //Testimonial
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -196,3 +322,39 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+// Contact section
+const contactObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            contactObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+const contactSection = document.querySelector('.section.contact');
+if (contactSection) {
+    contactObserver.observe(contactSection);
+}
+
+// Adding the button to the DOM
+const scrollButton = document.createElement('div');
+scrollButton.className = 'scroll-to-top';
+document.body.appendChild(scrollButton);
+
+// Show/hide button based on scroll position
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {  // Show after scrolling 300px
+        scrollButton.classList.add('visible');
+    } else {
+        scrollButton.classList.remove('visible');
+    }
+});
+
+// Smooth scroll to top when clicked
+scrollButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
