@@ -13,18 +13,20 @@
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
 
+    
+
 </head>
 
 <body>
 
-    <div id="loader-wrapper">
-        <div class="loader-content">
+    <!-- <div id="loader-wrapper">
+        <div class="loader-content"> -->
           <!-- Main animated logo -->
-          <svg class="loader-logo" viewBox="0 0 200 200">
+            <!-- <svg class="loader-logo" viewBox="0 0 200 200">
             <circle class="outer-circle" cx="100" cy="100" r="80" stroke="#002180" stroke-width="4" fill="none"/>
-            <circle class="inner-circle" cx="100" cy="100" r="40" stroke="#002180" stroke-width="4" fill="none"/>
+            <circle class="inner-circle" cx="100" cy="100" r="40" stroke="#002180" stroke-width="4" fill="none"/> --> -->
             <!-- Animated dots -->
-            <circle class="dot dot1" cx="100" cy="20" r="6" fill="#002180"/>
+            <!-- <circle class="dot dot1" cx="100" cy="20" r="6" fill="#002180"/>
             <circle class="dot dot2" cx="180" cy="100" r="6" fill="#002180"/>
             <circle class="dot dot3" cx="100" cy="180" r="6" fill="#002180"/>
             <circle class="dot dot4" cx="20" cy="100" r="6" fill="#002180"/>
@@ -42,8 +44,12 @@
             <span>D</span>
           </div>
         </div>
-      </div>
+      </div> -->
     <header>
+<!-- 
+<div id="main-content" style="display: none;"> -->
+            <!-- Your main page content goes here -->
+<!-- </div> -->
 <!---------------progress bar-->
 <div class="progress-bar" id="scrollProgressBar"></div>
 <div class="content"></div>
@@ -80,20 +86,23 @@
 
 
 <section id="Home" class="hero-section">
-<div class="container">
-    <div class="row align-items-center">
-        <div class="col-lg-6">
-            <div class="welcome-tag">Welcome</div>
-            <h5 class="title">I create digital solutions as<br> a <span class="profession" id="profession"></span></h5>
-            <p class="description">I'm a passionate UI/UX Designer, Front-end Developer and Graphic Designer. I've been helping businesses solve problems and elevate their brands through creative and functional design solutions.</p>
-                     <a href="#contact" class="contact-btn">Contact me</a>
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Text content column -->
+            <div class="col-lg-6 text-content">
+                <div class="welcome-tag">Welcome</div>
+                <h5 class="title">I create digital solutions as<br> a <span class="profession" id="profession"></span> <span class="cursor"></span></h5>
+                <p class="description">I'm a passionate UI/UX Designer, Front-end Developer, and Graphic Designer. I've been helping businesses solve problems and elevate their brands through creative and functional design solutions.</p>
+                <a href="#contact" class="contact-btn">Contact me</a>
+            </div>
 
-            
-        </div>
-        <div class="col-lg-6 text-center">
-            <img src="Profile.webp" alt="Profile" class="profile-image">
+            <!-- Image column -->
+            <div class="col-lg-6 image-content text-center">
+                <img src="Profile.webp" alt="Profile" class="profile-image">
+            </div>
         </div>
     </div>
+            
     <div class="row stats">
         <div class="col-md-4 stat-item">
             <div class="stat-number" id="clients">0</div>
@@ -113,22 +122,21 @@
 
 <!--------About-->
 <section class="about-section" id="about">
-<div class="container" id="About">
-    <div class="row align-items-center">
-        <div class="col-lg-5">
-            <div class="about-image">
-                <img src="Profile.webp" alt="About Me" class="img-fluid about-img">
-                <div class="image-bg"></div><br><br>
+    <div class="container" id="About">
+        <div class="row align-items-center">
+            <div class="col-lg-5 about-image-container">
+                <div class="about-image">
+                    <img src="Profile.webp" alt="About Me" class="img-fluid about-img">
+                    <div class="image-bg"></div><br><br>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-7">
-            <h2 class="section-title">About Me</h2>
-            <p class="about-text">
-                I'm Ridwanullah, a creative Product Designer and Web Developer with years of experience. I have a passion for crafting intuitive designs that enhance user experiences. My goal is to solve real business challenges through functional and visually appealing solutions. I believe in the power of design and technology to transform ideas into impactful products.
-            </p>
-            <h3 class="skills-title">My Skills</h3>
-    
-            <div class="skills-container">
+            <div class="col-lg-7 about-content">
+                <h2 class="section-title" style="color: #002180;">About Me</h2>
+                <p class="about-text">
+                    I'm Ridwanullah, a creative Product Designer and Web Developer with years of experience. I have a passion for crafting intuitive designs that enhance user experiences. My goal is to solve real business challenges through functional and visually appealing solutions. I believe in the power of design and technology to transform ideas into impactful products.
+                </p>
+                <h3 class="skills-title">My Skills</h3>
+                <div class="skills-container">
               <div class="row">
                 <div class="col-md-6">
                   <div class="skill-item">
@@ -174,7 +182,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-4">
-            <span class="skills-label">My Skills</span>
+            <span class="skills-label" style="color: #002180;">My Skills</span>
             <h2 class="section-title">Why Hire Me For Your Next <span id="project">Project?</span></h2>
             <p class="skills-intro">I combine design and development to create user-friendly, visually striking solutions that solve business challenges</p>
             <a href="https://www.upwork.com/freelancers/~019c0cba1e77ec36b0" class="contact-btn" target="_blank"> Hire Me</a>
@@ -276,6 +284,10 @@
             </div>
         </div>
     </div>
+
+    <button class="btn view-all-btn" style="display: flex; margin-left: auto; margin-top: 10px; width: 150px; justify-content: center; height: 100%;">
+        <a href="project.html" style="color: inherit; text-decoration: none;">View all</a>
+      </button>
 </div>
 </section><br><br<br>
 
@@ -287,31 +299,52 @@
         <h2 class="section-title">What my Clients are saying <span id="project">About Me</span></h2>
         <div class="testimonial-slider position-relative mt-5">
             <div id="testimonialTrack" class="testimonial-track">
-                <div class="testimonial-slide">
-                    <div class="rating mb-4">★★★★★</div>
-                    <p>I'll describe Odun as a Design Whizz kid! He is very clever, intelligent, and diligent. His ability to take initiative to get important things done without being asked to is very impressive. He has an unusual ability to see the bigger picture beyond the obvious- this single attribute led him to ideate and design features that opened up a new revenue stream for the business, that was not thought of prior. He's very much of immense value to any team, and I'm very happy to have him on my team.</p>
-                    <div class="testimonial-author d-flex align-items-center mt-4">
-                        <img src="https://media.licdn.com/dms/image/v2/D4D03AQFAxoYSDEqz0g/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1700882500339?e=1733961600&v=beta&t=gnvSbFyQKywB2eG3I8UGDXTIQgN3KdzC2NSjQdYbFWE" class="rounded-circle">
-                        <div class="author-info ms-3">
-                            <h4 class="mb-0">M.O.A Lawal</h4>
-                            <p>Founder | Effico AI</p>
+                <div class="testimonial-slide" id="testimonial-container">
+                    <div class="glass-container">  <!-- Added glass container here -->
+                        <div class="rating mb-4">★★★★★</div>
+                        <p>Odunayo Ridwanullah Oyelami is a highly skilled designer with impressive initiative and vision, often creating features that drive new revenue. His contributions are invaluable, and I’m proud to have him on my team.</p>
+                        <div class="testimonial-author d-flex align-items-center mt-4">
+                            <img src="https://media.licdn.com/dms/image/v2/D4D03AQFAxoYSDEqz0g/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1700882500339?e=1733961600&v=beta&t=gnvSbFyQKywB2eG3I8UGDXTIQgN3KdzC2NSjQdYbFWE" class="rounded-circle">
+                            <div class="author-info ms-3">
+                                <h4 class="mb-0">M.O.A Lawal</h4>
+                                <p>Founder | Effico AI</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Keep other slides as they were -->
                 <div class="testimonial-slide">
-                    <div class="rating mb-4">★★★★★</div>
-                    <p>Odunayo Ridwanullah Oyelami worked single-handedly on the design for the BorrowMe a project I am working on, and I was thoroughly impressed by his efficiency and speed. Despite working alone, Odunayo delivered high-quality, user-centric designs in a remarkably short time frame. His ability to grasp the project requirements quickly and translate them into a clean, intuitive interface was exceptional. I highly recommend Odunayo to anyone looking for a designer who is fast, reliable, and capable of producing excellent results on tight schedules.</p>
-                    <div class="testimonial-author d-flex align-items-center mt-4">
+                    <div class="glass-container">
+
+                        <div class="rating mb-4">★★★★★</div>
+                        <p>For the BorrowMe project, Odunayo efficiently delivered high-quality, user-friendly designs in record time. His ability to quickly understand needs and produce clean interfaces makes him a reliable asset to any team. Highly recommended.</p>
+                        <div class="testimonial-author d-flex align-items-center mt-4">
                         <img src="https://media.licdn.com/dms/image/v2/D4E03AQFkpwQZEPw-qg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1722720994764?e=1733961600&v=beta&t=CLHv29lGV6qsl0EBY8_9XQ1Sf2O-EsfZ2ut2ILET4Co" class="rounded-circle">
                         <div class="author-info ms-3">
                             <h4 class="mb-0">Solih Akorede Lawal</h4>
                             <p>Full Stack Developer</p>
                         </div>
                     </div>
+                    </div>
+                    
                 </div>
 
-               
+                <div class="testimonial-slide">
+                    <div class="glass-container">
+
+                        <div class="rating mb-4">★★★★★</div>
+                        <p>Odunayo delivered exceptional design work. His professionalism and attention to detail exceeded our expectations. I highly recommend him.</p>
+                        <div class="testimonial-author d-flex align-items-center mt-4">
+                        <img src="https://media.licdn.com/dms/image/v2/D4E03AQE1Rv34h5fY7Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1723745916357?e=1733961600&v=beta&t=DwS8Vy9u_zD5E9arOGeziomyN31OLt5JI1qxjp1h1Co" class="rounded-circle">
+                        <div class="author-info ms-3">
+                            <h4 class="mb-0">Gabriel Iruaga</h4>
+                            <p>Founder | Embold Lab</p>
+                        </div>
+                    </div>
+                    </div>
+                    
+                </div>
             </div>
 
             <!-- Navigation Arrows -->
@@ -326,117 +359,119 @@
 
 <!------------------contact----------------------------------------------------->
 
+<!------------------contact----------------------------------------------------->
+
 <section id="contact" class="section contact">
-<div class="container">
-    <div class="text-center">
-        <span class="contact-label">Contact</span>
-         <h2 class="section-title">Let's Discuss about your <span id="project">Project?</span></h2>
-        <p class="contact-intro">
-            Let's make something new, different and more meaningful or make<br>
-            thing more visual or conceptual
-        </p>
-    </div>
-
-    <div class="row mt-5">
-        <div class="col-lg-4">
-            <div class="contact-info">
-                <div class="contact-item d-flex align-items-center mb-4">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
+    <div class="container">
+        <div class="text-center">
+            <span class="contact-label">Contact</span>
+             <h2 class="section-title">Let's Discuss about your <span id="project">Project?</span></h2>
+            <p class="contact-intro">
+                Let's make something new, different and more meaningful or make<br>
+                thing more visual or conceptual
+            </p>
+        </div>
+        <div class="row mt-5">
+            <div class="col-lg-4">
+                <div class="contact-info">
+                    <div class="contact-item d-flex align-items-center mb-4">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="ms-3">
+                            <p class="mb-0 text-muted">Call me</p>
+                            <a href="tel:+2348103397891" class="text-dark text-decoration-none">+2348103397891</a>
+                        </div>
                     </div>
-                    <div class="ms-3">
-                        <p class="mb-0 text-muted">Call me</p>
-                        <a href="tel:+2348103397891" class="text-dark text-decoration-none">+2348103397891</a>
+    
+                    <div class="contact-item d-flex align-items-center mb-4">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="ms-3">
+                            <p class="mb-0 text-muted">Email me</p>
+                            <a href="mailto:ridoyelami@gmail.com" class="text-dark text-decoration-none">ridoyelami@gmail.com</a>
+                        </div>
+                    </div>
+    
+                    <div class="contact-item d-flex align-items-center">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="ms-3">
+                            <p class="mb-0 text-muted">Address</p>
+                            <p class="mb-0 text-dark">Ogun State, Nigeria</p>
+                        </div>
                     </div>
                 </div>
-
-                <div class="contact-item d-flex align-items-center mb-4">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
+            </div>
+        
+    
+            <div class="col-lg-8">
+                <form class="contact-form">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <input type="text" id="fullname" class="form-control" placeholder="Full name" required>
+                            <span id="fullname-error" class="error-message"></span>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <input type="email" id="email" class="form-control" placeholder="Your email" required>
+                            <span id="email-error" class="error-message"></span>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <input type="tel" id="phone" class="form-control" placeholder="Phone number" required>
+                            <span id="phone-error" class="error-message"></span>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <input type="text" id="budget" class="form-control" placeholder="Budget" required>
+                            <span id="budget-error" class="error-message"></span>
+                        </div>
+                        <div class="col-12 mb-4">
+                            <textarea id="message" class="form-control" rows="5" placeholder="Message" required></textarea>
+                            <span id="message-error" class="error-message"></span>
+                        </div>
+                        <div class="col-12 text-end">
+                            <button type="submit" class="submit-btn">Submit Message</button>
+                        </div>
                     </div>
-                    <div class="ms-3">
-                        <p class="mb-0 text-muted">Email me</p>
-                        <a href="mailto:ridoyelami@gmail.com" class="text-dark text-decoration-none">ridoyelami@gmail.com</a>
-                    </div>
-                </div>
-
-                <div class="contact-item d-flex align-items-center">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div class="ms-3">
-                        <p class="mb-0 text-muted">Address</p>
-                        <p class="mb-0 text-dark">Ogun State, Nigeria</p>
-                    </div>
-                </div>
+                </form>          
             </div>
         </div>
-
-        <div class="col-lg-8">
-            <form class="contact-form">
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <input type="text" id="fullname" class="form-control" placeholder="Full name" required>
-                        <span id="fullname-error" class="error-message"></span>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <input type="email" id="email" class="form-control" placeholder="Your email" required>
-                        <span id="email-error" class="error-message"></span>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <input type="tel" id="phone" class="form-control" placeholder="Phone number" required>
-                        <span id="phone-error" class="error-message"></span>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <input type="text" id="budget" class="form-control" placeholder="Budget" required>
-                        <span id="budget-error" class="error-message"></span>
-                    </div>
-                    <div class="col-12 mb-4">
-                        <textarea id="message" class="form-control" rows="5" placeholder="Message" required></textarea>
-                        <span id="message-error" class="error-message"></span>
-                    </div>
-                    <div class="col-12 text-end">
-                        <button type="submit" class="submit-btn">Submit Message</button>
-                    </div>
-                </div>
-            </form>          
-        </div>
     </div>
-</div>
-</section>
-
-    </main><br><br>
-    <footer>
-        <!-- place footer here -->
-        <div class="container">
-            <div class="row align-items-center">
-               
-                <div class="text-center">
-                    <p class="designer-credit">
-                        2024. All Rights Reserved<br>Designed and Developed By Ridwanullah
-                    </p>
+    </section>
+    
+        </main><br><br>
+        <footer>
+            <!-- place footer here -->
+            <div class="container">
+                <div class="row align-items-center">
+                   
+                    <div class="text-center">
+                        <p class="designer-credit">
+                            2024. All Rights Reserved<br>Designed and Developed By Ridwanullah
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="social-links mt-3 text-end">
-                <a href="https://web.facebook.com/ridwanullah.olayinkaoyelami.9" class="social-link" target="_blank" ><i class="fab fa-facebook-f"></i></a>
-                <a href="https://x.com/ridwanullah_291" class="social-link" target="_blank" ><i class="fab fa-twitter"></i></a>
-                <a href="https://www.linkedin.com/in/odunayouiuxdesigner/" class="social-link" target="_blank" ><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.instagram.com/colorblend_creative/" class="social-link" target="_blank" ><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>          
-
-    </footer>
-    <!-- Bootstrap JavaScript Libraries -->
-    <script
-        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"
-    ></script>
-
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        crossorigin="anonymous"
-    ></script>
-</body>
-</html>
+                <div class="social-links mt-3 text-end">
+                    <a href="https://web.facebook.com/ridwanullah.olayinkaoyelami.9" class="social-link" target="_blank" ><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/ridwanullah_291" class="social-link" target="_blank" ><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/odunayouiuxdesigner/" class="social-link" target="_blank" ><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/colorblend_creative/" class="social-link" target="_blank" ><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>          
+    
+        </footer>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+    
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+    </html>
