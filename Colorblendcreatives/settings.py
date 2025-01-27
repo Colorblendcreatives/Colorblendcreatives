@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-8$tumclmj5=p%i9@)_8cad36)(z1x004n89xwvcckyej-2&77m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel', 'colorblendcreative.com.ng']
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel', 'colorblendcreative.com.ng', 'www.colorblendcreative.com.ng']
 
 
 # Application definition
