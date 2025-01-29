@@ -23,7 +23,7 @@ def index(request):
                 context={"user": new_contact},
                 recipient_list=[settings.EMAIL_HOST_USER],
             )
-            messages.success(request, f"Hello {new_contact.full_name}, we've recieved your message and well reach out to you in no time.")
+            messages.success(request, f"Hello {new_contact.full_name}, we've recieved your message and we will reach out to you in no time.")
         except Exception as e:
             messages.success(request, f"An Error ocurred: {e}")
     return render(request, 'index.html', {})
