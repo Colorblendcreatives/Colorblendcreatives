@@ -304,7 +304,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         if (isValid) {
-            alert("Form submitted successfully!");
+            alert("Your Message has been sent");
             form.submit(); // Submit form if valid
         }
     });
