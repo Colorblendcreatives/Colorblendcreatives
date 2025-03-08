@@ -189,7 +189,7 @@ html {
 
 .nav-link:hover {
     color: white !important; /* blue color on hover */
-    background-color: #002180;
+    text-decoration: underline;
     border-radius: 18px;
 }
 
