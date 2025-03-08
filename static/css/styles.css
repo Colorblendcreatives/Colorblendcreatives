@@ -188,14 +188,14 @@ html {
 }
 
 .nav-link:hover {
-    color: white !important; /* blue color on hover */
+    color: #002180 !important; /* blue color on hover */
     text-decoration: underline;
     border-radius: 18px;
 }
 
 
 .download-cv {
-    border: 2px solid #002180;
+border: 2px solid #002180;
   color: #002180;
   padding: 8px 24px;
   border-radius: 25px;
@@ -206,8 +206,8 @@ html {
 }
 
 .download-cv:hover {
-    background: #002180;
-    color: white;
+    background: none;
+    text-decoration: underline;
 
 }
 
