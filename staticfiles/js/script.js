@@ -1,4 +1,4 @@
-//nav bar to close //
+I'm//nav bar to close //
 const navLinks = document.querySelectorAll('.nav-link');
 const navbarCollapse = document.getElementById('navbarNav');
 
@@ -201,7 +201,7 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.classList.add('slide-in');
         }
     });
-}, { threshold: 0.2 });
+}, { threshold: 0.1 });
 
 const portfolioSection = document.querySelector('.section.project');
 if (portfolioSection) {
