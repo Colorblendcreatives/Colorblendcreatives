@@ -1,4 +1,4 @@
-I'm//nav bar to close //
+//nav bar to close //
 const navLinks = document.querySelectorAll('.nav-link');
 const navbarCollapse = document.getElementById('navbarNav');
 
@@ -210,6 +210,56 @@ if (portfolioSection) {
 
 //Testimonial
 
+// document.addEventListener('DOMContentLoaded', function() {
+//     const track = document.getElementById('testimonialTrack');
+//     const slides = track.children;
+//     const prevBtn = document.querySelector('.arrow-btn.prev');
+//     const nextBtn = document.querySelector('.arrow-btn.next');
+//     let currentSlide = 0;
+//     let isAutoScrolling = true;
+//     let autoScrollInterval;
+
+//     function updateSlidePosition() {
+//         track.style.transform = `translateX(-${currentSlide * 100}%)`;
+//     }
+
+//     function moveToNextSlide() {
+//         currentSlide = (currentSlide + 1) % slides.length;
+//         updateSlidePosition();
+//     }
+
+//     function moveToPrevSlide() {
+//         currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+//         updateSlidePosition();
+//     }
+
+//     function startAutoScroll() {
+//         autoScrollInterval = setInterval(moveToNextSlide, 5000);
+//     }
+
+//     function pauseAutoScroll() {
+//         clearInterval(autoScrollInterval);
+//         isAutoScrolling = false;
+//         setTimeout(() => {
+//             if (!isAutoScrolling) {
+//                 startAutoScroll();
+//                 isAutoScrolling = true;
+//             }
+//         }, 10000);
+//     }
+
+//     prevBtn.addEventListener('click', () => {
+//         moveToPrevSlide();
+//         pauseAutoScroll();
+//     });
+
+//     nextBtn.addEventListener('click', () => {
+//         moveToNextSlide();
+//         pauseAutoScroll();
+//     });
+
+//     startAutoScroll();
+// });
 
 // Form validation
 document.addEventListener('DOMContentLoaded', function () {
