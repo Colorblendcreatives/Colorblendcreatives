@@ -201,7 +201,7 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.classList.add('slide-in');
         }
     });
-}, { threshold: 0.2 });
+}, { threshold: 0.1 });
 
 const portfolioSection = document.querySelector('.section.project');
 if (portfolioSection) {
