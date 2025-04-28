@@ -1,21 +1,15 @@
-//loading//
-document.addEventListener('DOMContentLoaded', function() {
-    // Ensure all content is loaded
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        const loader = document.getElementById('loader-wrapper');
-        loader.style.opacity = '0';
-        loader.style.visibility = 'hidden';
-        
-        // Remove loader after animation
-        setTimeout(() => {
-          loader.remove();
-        }, 500);
-      }, 2000); // Show loader for 2 seconds
-    });
-  });
+//nav bar to close //
+const navLinks = document.querySelectorAll('.nav-link');
+const navbarCollapse = document.getElementById('navbarNav');
 
-  
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    if (navbarCollapse.classList.contains('show')) {
+      new bootstrap.Collapse(navbarCollapse).hide();
+    }
+  });
+});
+ 
   
 
 // Scroll to the top on reload and page load
@@ -207,7 +201,7 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.classList.add('slide-in');
         }
     });
-}, { threshold: 0.1 });
+}, { threshold: 0.2 });
 
 const portfolioSection = document.querySelector('.section.project');
 if (portfolioSection) {
@@ -216,56 +210,6 @@ if (portfolioSection) {
 
 //Testimonial
 
-document.addEventListener('DOMContentLoaded', function() {
-    const track = document.getElementById('testimonialTrack');
-    const slides = track.children;
-    const prevBtn = document.querySelector('.arrow-btn.prev');
-    const nextBtn = document.querySelector('.arrow-btn.next');
-    let currentSlide = 0;
-    let isAutoScrolling = true;
-    let autoScrollInterval;
-
-    function updateSlidePosition() {
-        track.style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
-
-    function moveToNextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        updateSlidePosition();
-    }
-
-    function moveToPrevSlide() {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        updateSlidePosition();
-    }
-
-    function startAutoScroll() {
-        autoScrollInterval = setInterval(moveToNextSlide, 5000);
-    }
-
-    function pauseAutoScroll() {
-        clearInterval(autoScrollInterval);
-        isAutoScrolling = false;
-        setTimeout(() => {
-            if (!isAutoScrolling) {
-                startAutoScroll();
-                isAutoScrolling = true;
-            }
-        }, 10000);
-    }
-
-    prevBtn.addEventListener('click', () => {
-        moveToPrevSlide();
-        pauseAutoScroll();
-    });
-
-    nextBtn.addEventListener('click', () => {
-        moveToNextSlide();
-        pauseAutoScroll();
-    });
-
-    startAutoScroll();
-});
 
 // Form validation
 document.addEventListener('DOMContentLoaded', function () {
@@ -357,4 +301,70 @@ scrollButton.addEventListener('click', () => {
         top: 0,
         behavior: 'smooth'
     });
+});
+
+
+// Project filtering functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all filter buttons and project items
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+    
+    // Add click event to filter buttons
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterBtns.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Get filter value
+            const filterValue = this.getAttribute('data-filter');
+            
+            // Filter projects
+            projectItems.forEach(item => {
+                if (filterValue === 'all') {
+                    item.classList.remove('hide');
+                } else {
+                    if (item.classList.contains(filterValue)) {
+                        item.classList.remove('hide');
+                    } else {
+                        item.classList.add('hide');
+                    }
+                }
+            });
+        });
+    });
+    
+    // Add animation to project cards on hover
+    const portfolioCards = document.querySelectorAll('.portfolio-card');
+    portfolioCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+            this.style.boxShadow = '0 15px 30px rgba(0, 33, 128, 0.1)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = 'none';
+        });
+    });
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // This is needed if you want to pause on hover
+    const track = document.getElementById('testimonialTrack');
+    
+    if (track) {
+        track.addEventListener('mouseenter', function() {
+            this.style.animationPlayState = 'paused';
+        });
+        
+        track.addEventListener('mouseleave', function() {
+            this.style.animationPlayState = 'running';
+        });
+    }
 });
