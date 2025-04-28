@@ -15,28 +15,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio|Odunayo Oyelami</title>
-     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="icon" href="MY LOGO.png">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- Add this in your <head> section -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.11.0/css/flag-icon.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="{% static 'img/LOGO.png' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <script defer src="{% static 'js/script.js' %}"></script>
+
+    
 
 </head>
 
 <body>
 
-<body>
+    <!-- <div id="loader-wrapper">
+        <div class="loader-content"> -->
+          <!-- Main animated logo -->
+            <!-- <svg class="loader-logo" viewBox="0 0 200 200">
+            <circle class="outer-circle" cx="100" cy="100" r="80" stroke="#002180" stroke-width="4" fill="none"/>
+            <circle class="inner-circle" cx="100" cy="100" r="40" stroke="#002180" stroke-width="4" fill="none"/> -->
+            <!-- Animated dots -->
+            <!-- <circle class="dot dot1" cx="100" cy="20" r="6" fill="#002180"/>
+            <circle class="dot dot2" cx="180" cy="100" r="6" fill="#002180"/>
+            <circle class="dot dot3" cx="100" cy="180" r="6" fill="#002180"/>
+            <circle class="dot dot4" cx="20" cy="100" r="6" fill="#002180"/>
+          </svg>
+          <div class="loader-text">
+            <span>C</span>
+            <span>O</span>
+            <span>L</span>
+            <span>O</span>
+            <span>R</span>
+            <span>B</span>
+            <span>L</span>
+            <span>E</span>
+            <span>N</span>
+            <span>D</span>
+          </div>
+        </div>
+      </div> -->
     <header>
-
+<!-- 
+<div id="main-content" style="display: none;"> -->
+            <!-- Your main page content goes here -->
+<!-- </div> -->
 <!---------------progress bar-->
 <div class="progress-bar" id="scrollProgressBar"></div>
 <div class="content"></div>
@@ -45,7 +69,7 @@
 
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <img src="MY LOGO.png" width="32px"/>
+                <img src="{% static 'img/LOGO.png' %}" width="32px"/>
                 <a class="navbar-brand" href="#Home">Colorblend Creative</a>
                 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -77,24 +101,15 @@
         <div class="row align-items-center">
             <!-- Text content column -->
             <div class="col-lg-6 text-content">
-                <div class="welcome-tag">Welcome</div>
-                <h5 class="title">I create digital solutions as<br> a <span class="profession" id="profession"></span> <span class="cursor"></span></h5>
+                <div class="welcome-tag" style="margin-top: 70px;">Welcome</div>
+                <h4 class="title">I create digital solutions as<br> a <span class="profession" id="profession"></span> <span class="cursor"></span></h4>
                 <p class="description">I'm a passionate UI/UX Designer, Front-end Developer, and Graphic Designer. I've been helping businesses solve problems and elevate their brands through creative and functional design solutions.</p>
-                
-                <!-- Tech stack icons -->
-                <div class="tech-stack">
-                    <div class="tech-icon"><i class="devicon-figma-plain colored"></i><span>Figma</span></div>
-                    <div class="tech-icon"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
-                    <div class="tech-icon"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
-                    <div class="tech-icon"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
-                </div>
                 <a href="#contact" class="contact-btn">Contact me</a>
-                <a href="#project" class="portfolio-btn" style="text-decoration: none; color: #002180;">View my work ↗️</a>
             </div>
 
             <!-- Image column -->
             <div class="col-lg-6 image-content text-center">
-                <img src="Profile.webp" alt="Profile" class="profile-image">
+                <img src="{% static 'img/Profile.webp' %}" alt="Profile" class="profile-image">
             </div>
         </div>
     </div>
@@ -122,7 +137,7 @@
         <div class="row align-items-center">
             <div class="col-lg-5 about-image-container">
                 <div class="about-image">
-                    <img src="Profile.webp" alt="About Me" class="img-fluid about-img">
+                    <img src="{% static 'img/Profile.webp' %}" alt="About Me" class="img-fluid about-img">
                     <div class="image-bg"></div><br><br>
                 </div>
             </div>
@@ -168,7 +183,7 @@
                 </div>  
             </div>
         
-        <a href="https://www.upwork.com/freelancers/~019c0cba1e77ec36b0" class="contact-btn" target="_blank">Hire Me</a>
+        <a href="https://www.upwork.com/freelancers/~019c0cba1e77ec36b0" class="contact-btn" target="_blank">CONTACT ME</a>
             </div>
           </div>
 </section>
@@ -230,267 +245,183 @@
 
 
 <!-----------------Portfolio-->
+
 <section id="project" class="section project">
     <div class="container">
         <span class="portfolio-label">Portfolio</span>
         <div class="d-flex justify-content-between align-items-center mb-2">
             <h2 class="section-title">My Latest <span id="Creations">Creations</span></h2>
-            <a href="https://www.behance.net/ridwanullahoyelami" class="view-all-btn" target="_blank">Behance Profile</a>
+            <a href="https://www.behance.net/ridwanullahoyelami" class="view-all-btn" target="_blank" >View My Behance</a>
         </div>
         <p class="portfolio-intro mb-3">
-            Explore my recent Design works 
+       Explore my recent Design works 
         </p>
 
-        <!-- Project Filter Buttons -->
-        <div class="project-filter mb-4">
-            <button class="filter-btn active" data-filter="all">All Projects</button>
-            <button class="filter-btn" data-filter="uiux">UI/UX Design</button>
-            <button class="filter-btn" data-filter="frontend">Web Development</button>
-            <!-- <button class="filter-btn" data-filter="graphics">Graphics Design</button> -->
+        <div class="row">
+            <a href="https://www.behance.net/gallery/207575807/Borrwing-Lending-app" class="portfolio-card-link" style="text-decoration: none; color: inherit;" target="_blank">
+    
+            <div class="col-md-4">
+                <div class="portfolio-card">
+                <div class="portfolio-image">
+                <img src="{% static 'img/Borrow-me.webp' %}" alt="Project 3" class="img-fluid">
+             </div>
+            <div class="portfolio-content">
+                <h3> BorrowMe Mobile App</h3>
+                <p>An innovative app designed to help users track loans and manage lending borrowing activities.</p>
+                <a href="https://www.behance.net/gallery/207575807/Borrwing-Lending-app" class="behance-link" target="_blank" >Click to View More →</a>
+            </div>
+            </div>
         </div>
 
-        <div class="row project-container">
-            <!-- Abfallcare Mobile App - UI/UX -->
-            <div class="col-md-4 project-item uiux">
+        <div class="col-md-4 mt-3">
+            <a href="https://play.google.com/store/apps/details?id=com.efficoainew.org" class="portfolio-card-link" style="text-decoration: none; color: inherit;" target="_blank">
                 <div class="portfolio-card">
                     <div class="portfolio-image">
-                        <img src="abfallcare.webp" alt="Abfallcare app" class="img-fluid">
+                        <img src="{% static 'img/Effico.webp' %}" alt="Project 1" style="height:100%;" class="img-fluid">
                     </div>
                     <div class="portfolio-content">
-                        <h3>AbfallCare Appp</h3>
-                        <p>The Waste Management App is a digital solution designed to streamline waste collection, tracking, and reporting processes.</p>
-                        <div class="project-actions">
-                            <a href="https://www.figma.com/proto/KR0pFkmeY6fR2xmSeEmfna/Abfallcare--my-copy-?node-id=151-4264&p=f&t=SfNBEfXULxFtAk8J-1&scaling=scale-down&content-scaling=fixed&page-id=97%3A1679&starting-point-node-id=151%3A5445" class="action-btn prototype-btn" target="_blank">
-                                <i class="fas fa-play"></i> View Prototype
-                            </a>
-                            <a href="https://www.behance.net/gallery/224659397/ABFALLCARE-WASTE-MANAGEMENT" class="action-btn case-study-btn" target="_blank">
-                                View Case Study
-                            </a>
-                        </div>
+                        <h3 class="label">Effico AI Assistant</h3>
+                        <p>Effico AI helps students unlock their academic potential through the power of chatgpt.</p>
+                        <span class="behance-link">Click to view more →</span>
                     </div>
                 </div>
-            </div>
+            </a>
+        </div>
 
-            <!-- Borrowme - UI/UX -->
-            <div class="col-md-4 mt-3 project-item uiux">
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <img src="Borrow me.webp" alt="Borrowne" style="height:100%;" class="img-fluid">
-                    </div>
-                    <div class="portfolio-content">
-                        <h3 class="label">BorrowMe App</h3>
-                        <p>An innovative app designed to help users track loans and manage lending borrowing activities.</p>
-                        <div class="project-actions">
-                        <a href="https://www.behance.net/gallery/207575807/Borrwing-Lending-app" class="action-btn case-study-btn" target="_blank">
-                                View Case Study
-                            </a>
-                        </div>
-                    </div>
+        <div class="col-md-4 mt-3">
+            <a href="https://www.behance.net/gallery/209047449/Project-management-dashboard" class="portfolio-card-link" style="text-decoration: none; color: inherit;" target="_blank">
+            <div class="portfolio-card">
+                <div class="portfolio-image">
+                    <img src="{% static 'img/Dashboard.webp' %}" alt="Project 2" class="img-fluid">
                 </div>
-            </div>
-
-            <!-- Urbanest - UI/UX -->
-            <div class="col-md-4 mt-3 project-item uiux">
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <img src="Frame 1171282682.webp" alt="Urbanest" class="img-fluid">
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>Real Estate website</h3>
-                        <p>A website designed to simplify proprty search and transaction.</p>
-                        <div class="project-actions">
-                             <a href="https://www.behance.net/gallery/214197451/Real-Estate-Website" class="action-btn case-study-btn" target="_blank">
-                                View Case Study
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Frontend-->
-            <div class="col-md-4 mt-3 project-item frontend">
-                <div class="portfolio-card" style="margin-top: 40px;">
-                    <div class="portfolio-image">
-                        <img src="Buffpepe.webp" alt="Hugecircle Website" class="img-fluid">
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>BuffPepe Landing page</h3>
-                        <p>The BuffPepe landing page offers a vibrant and engaging introduction to the BuffPepe memecoin, capturing its playful yet impactful presence in the crypto world.</p>
-                        <div class="project-actions">
-                            <a href="https://colorblendcreatives.github.io/buffpepe/" class="action-btn website-btn" target="_blank">
-                                View Website
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Awamonie - UI/UX -->
-            <div class="col-md-4 mt-3 project-item frontend">
-                <div class="portfolio-card" style="margin-top: 40px;">
-                    <div class="portfolio-image">
-                        <img src="Saffrongas.webp " alt="Awamonie" class="img-fluid">
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>Saffrongas</h3>
-                        <p>SaffronGas provides a user-friendly platform for ordering gas and accessories, offering convenience and reliability for all your fuel needs</p>
-                        <div class="project-actions">
-                            
-                            <a href="https://colorblendcreatives.github.io/Saffrongas/" class="action-btn website-btn" target="_blank">
-                                View Website
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 mt-3 project-item uiux">
-                <div class="portfolio-card" style="margin-top: 40px;">
-                    <div class="portfolio-image">
-                        <img src="Hugecircle.webp" alt="Awamonie" class="img-fluid">
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>Hugecircle Website</h3>
-                        <p>luxurious website design for Higecircle, featuring a sleek user interface and smooth navigation for an upscale dessert experience</p>
-                        <div class="project-actions">
-                            
-                            <a href="https://www.behance.net/gallery/203471085/HUGECIRCLE-gluten-free-desserts-website" class="action-btn case-study-btn" target="_blank">
-                                View Case Study
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Web 3 Landing Page - Frontend & Graphics -->
-            <div class="col-md-4 mt-3 project-item uiux ">
-                <div class="portfolio-card" style="margin-top: 15px;">
-                    <div class="portfolio-image">
-                        <img src="WEB3.webp" alt="Web 3 Landing Page" class="img-fluid">
-                    </div>
-                    <div class="portfolio-content">
-                        <h3 class="label">Web 3 Landing Page</h3>
-                        <p>A sleek, future-ready Web3 landing page designed for seamless user engagement and decentralized experiences.</p>
-                        <div class="project-actions">
-                            <a href="https://www.behance.net/gallery/209938091/WEB-3-LANDING-PAGE-DESIGN" class="action-btn case-study-btn" target="_blank">
-                                View Design
-                            </a>
-                        </div>
-                    </div>
+                <div class="portfolio-content">
+                     <h3>   Project Management Dashbaord</h3>
+                    <p>A streamlined project management dashboard designed to simplify task tracking, team collaboration, and project progress at a glance.</p>
+                    <a href="https://www.behance.net/gallery/209047449/Project-management-dashboard" class="behance-link" target="_blank">Clcik to View More →</a>
                 </div>
             </div>
         </div>
 
-        <button class="btn view-all-btn" style="display: flex; margin-left: auto; margin-right: 9%; margin-top: 60px; width: 150px; justify-content: center; height: 100%;">
-            <a href="https://www.behance.net/ridwanullahoyelami" style="color: inherit; text-decoration: none;">View all</a>
-        </button>
+        <div class="col-md-4 mt-3">
+            <a href="https://www.behance.net/gallery/203471085/HUGECIRCLE-gluten-free-desserts-website" class="portfolio-card-link" style="text-decoration: none; color: inherit;" target="_blank">
+            <div class="portfolio-card" style="margin-top: 40px;">
+                <div class="portfolio-image">
+                    <img src="{% static 'img/indulge.webp' %}" alt="Project 3" class="img-fluid">
+                </div>
+                <div class="portfolio-content">
+                    <h3>    Hugecircle website</h3>
+                    <p>An elegant and luxurious website design for Higecircle, featuring a sleek user interface and smooth navigation for an upscale dessert experience</p>
+                    <a href="https://www.behance.net/gallery/203471085/HUGECIRCLE-gluten-free-desserts-website" class="behance-link" target="_blank">Click to View More →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mt-3">
+            <a href="https://www.behance.net/gallery/203453909/AWAMONIE-Savings-and-Investment-app" class="portfolio-card-link" style="text-decoration: none; color: inherit;" target="_blank">
+            <div class="portfolio-card" style="margin-top: 40px;">
+                <div class="portfolio-image">
+                    <img src="{% static 'img/Awamonie.webp' %}" alt="Project 3" class="img-fluid">
+                </div>
+                <div class="portfolio-content">
+                    <h3> Awamonie </h3>
+                    <p>A social platform designed to empower users to manage their finances collaboratively</p>
+                    <a href="https://www.behance.net/gallery/203453909/AWAMONIE-Savings-and-Investment-app" class="behance-link" target="_blank">Clcik to View More →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mt-3">
+            <a href="https://www.behance.net/gallery/209938091/WEB-3-LANDING-PAGE-DESIGN" class="behance-link" target="_blank">
+            
+            <div class="portfolio-card" style="margin-top: 15px;">
+                <div class="portfolio-image">
+                    <img src="{% static 'img/WEB3.webp' %}" alt="Project 1" class="img-fluid">
+                </div>
+                <div class="portfolio-content">
+                    <h3 class="label">Web 3 landing page</h3>
+                    <p>A sleek, future-ready Web3 landing page designed for seamless user engagement and decentralized experiences.</p>
+                    <a href="https://www.behance.net/gallery/209938091/WEB-3-LANDING-PAGE-DESIGN" class="behance-link" target="_blank">Click to View More →</a>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+    
+</div>
+
+
+
+    <button class="btn view-all-btn" style="display: flex; margin-left: auto; margin-right: 9%; margin-top: 60px; width: 150px; justify-content: center; height: 100%;">
+        <a href="https://www.behance.net/ridwanullahoyelami" style="color: inherit; text-decoration: none;">View all</a>
+      </button>
+</div>
 </section><br><br<br>
 
 <!-----------TEstimonial ------>
 
-<section id="testimonial" class="section testimonials">
+<section id="testimonial" class="section section testimonials">
     <div class="container">
-      <span class="review-label">Reviews</span>
-      <h2 class="section-title">
-        What my Clients are saying <span id="project">About Me</span>
-      </h2>
-      <div class="testimonial-carousel-container mt-5">
-        <div id="testimonialTrack" class="testimonial-track">
-          
-          <!-- Testimonial 1 -->
-          <div class="testimonial-card">
-            <div class="card-inner">
-              <div class="rating mb-3">★★★★★</div>
-              <p>Odunayo Ridwanullah Oyelami is a highly skilled designer with impressive initiative and vision, often creating features that drive new revenue.</p>
-              <div class="testimonial-author d-flex align-items-center mt-3">
-                <img src="https://media.licdn.com/dms/image/v2/D4D03AQFAxoYSDEqz0g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1700882500339?e=1751500800&v=beta&t=Va3ZxiGnsUxhmmdqESQq8eJXhB4WV8QFkJMQsyt_i-s" class="rounded-circle" alt="M.O.A Lawal">
-                <div class="author-info ms-3">
-                  <h4 class="mb-0">M.O.A Lawal</h4>
-                  <p>Founder | Effico AI</p>
+        <span class="review-label">Reviews</span>
+        <h2 class="section-title">What my Clients are saying <span id="project">About Me</span></h2>
+        <div class="testimonial-slider position-relative mt-5">
+            <div id="testimonialTrack" class="testimonial-track">
+                <div class="testimonial-slide" id="testimonial-container">
+                    <div class="glass-container">  <!-- Added glass container here -->
+                        <div class="rating mb-4">★★★★★</div>
+                        <p>Odunayo Ridwanullah Oyelami is a highly skilled designer with impressive initiative and vision, often creating features that drive new revenue. His contributions are invaluable, and I’m proud to have him on my team.</p>
+                        <div class="testimonial-author d-flex align-items-center mt-4">
+                            <img src="https://media.licdn.com/dms/image/v2/D4D03AQFAxoYSDEqz0g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1700882500339?e=2147483647&v=beta&t=Q-DMtjw-bwtcaedgBEBgSSdnmeY5pPJdLwMSEwaxBx4">
+                            <div class="author-info ms-3">
+                                <h4 class="mb-0">M.O.A Lawal</h4>
+                                <p>Founder | Effico AI</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="country-flag ms-auto">
-                    <img src="https://flagcdn.com/w40/ng.png" alt="Nigeria" class="flag-img">
-                  </div>
-              </div>
-            </div>
-          </div>
-  
-          <!-- Testimonial 2 -->
-          <div class="testimonial-card">
-            <div class="card-inner">
-              <div class="rating mb-3">★★★★★</div>
-              <p>For the BorrowMe project, Odunayo efficiently delivered high-quality, user-friendly designs in record time.</p>
-              <div class="testimonial-author d-flex align-items-center mt-3">
-                <img src="https://media.licdn.com/dms/image/v2/D4E03AQFkpwQZEPw-qg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1722720994764?e=1751500800&v=beta&t=98TIj7VekCeOqAD7vdYyC6zShKIcirv81GCMT4vKPvw" class="rounded-circle" alt="Solih Akorede Lawal">
-                <div class="author-info ms-3">
-                  <h4 class="mb-0">Solih Akorede Lawal</h4>
-                  <p>Full Stack Developer</p>
+
+                <!-- Keep other slides as they were -->
+                <div class="testimonial-slide">
+                    <div class="glass-container">
+
+                        <div class="rating mb-4">★★★★★</div>
+                        <p>For the BorrowMe project, Odunayo efficiently delivered high-quality, user-friendly designs in record time. His ability to quickly understand needs and produce clean interfaces makes him a reliable asset to any team. Highly recommended.</p>
+                        <div class="testimonial-author d-flex align-items-center mt-4">
+                        <img src="https://media.licdn.com/dms/image/v2/D4E03AQFkpwQZEPw-qg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1722720994764?e=2147483647&v=beta&t=lYIF5JwhnB1G9CT9xljnea_wNp_dZq6hGzr_4b3QwxU" class="rounded-circle">
+                        <div class="author-info ms-3">
+                            <h4 class="mb-0">Solih Akorede Lawal</h4>
+                            <p>Full Stack Developer</p>
+                        </div>
+                    </div>
+                    </div>
+                    
                 </div>
-                <div class="country-flag ms-auto">
-                    <img src="https://flagcdn.com/w40/ng.png" alt="Nigeria" class="flag-img">
-                  </div>
-              </div>
-            </div>
-          </div>
-  
-          <!-- Testimonial 3 -->
-          <div class="testimonial-card">
-            <div class="card-inner">
-              <div class="rating mb-3">★★★★★</div>
-              <p>Odunayo delivered exceptional design work. His professionalism and attention to detail exceeded our expectations. I highly recommend him.</p>
-              <div class="testimonial-author d-flex align-items-center mt-3">
-                <img src="https://media.licdn.com/dms/image/v2/D4E03AQE1Rv34h5fY7Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1723745916357?e=1751500800&v=beta&t=menc_Qjya-QeTsWB0dqK5r_zlyd71FTzHr-8fWm7_zU" class="rounded-circle" alt="Gabriel Iruaga">
-                <div class="author-info ms-3">
-                  <h4 class="mb-0">Gabriel Iruaga</h4>
-                  <p>Founder | Embold Lab</p>
+
+                <div class="testimonial-slide">
+                    <div class="glass-container">
+
+                        <div class="rating mb-4">★★★★★</div>
+                        <p>Odunayo delivered exceptional design work. His professionalism and attention to detail exceeded our expectations. I highly recommend him.</p>
+                        <div class="testimonial-author d-flex align-items-center mt-4">
+                        <img src="https://media.licdn.com/dms/image/v2/D4E03AQE1Rv34h5fY7Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1723745916357?e=2147483647&v=beta&t=KwxW0hHPSNsDOaG57W0GdT35a1Zh4vV3QI0GOxqI6HE" class="rounded-circle">
+                        <div class="author-info ms-3">
+                            <h4 class="mb-0">Gabriel Iruaga</h4>
+                            <p>Founder | Embold Lab</p>
+                        </div>
+                    </div>
+                    </div>
+                    
                 </div>
-                <div class="country-flag ms-auto">
-                    <img src="https://flagcdn.com/w40/gb.png" alt="Nigeria" class="flag-img">
-                  </div>
-              </div>
             </div>
-          </div>
-  
-          <!-- Duplicate testimonials for continuous scrolling effect -->
-          <div class="testimonial-card">
-            <div class="card-inner">
-              <div class="rating mb-3">★★★★★</div>
-              <p>The landing page looks clean, professional, and matches what I had in mind. Thank you for your effort and attention to detail. I'm very satisfied with your work!</p>
-              <div class="testimonial-author d-flex align-items-center mt-3">
-                <img src="https://colorblendcreatives.github.io/buffpepe/logo.webp" class="rounded-circle" alt="M.O.A Lawal">
-                <div class="author-info ms-3">
-                  <h4 class="mb-0">Asta</h4>
-                  <p>Founder | BuffPepe</p>
-                </div>
-                <div class="country-flag ms-auto">
-                    <img src="https://flagcdn.com/w40/jp.png" alt="Japan" class="flag-img">
-                  </div>
-              </div>
+
+            <!-- Navigation Arrows -->
+            <div class="testimonial-arrows">
+                <button class="arrow-btn prev">←</button>
+                <button class="arrow-btn next">→</button>
             </div>
-          </div>
-  
-          <div class="testimonial-card">
-            <div class="card-inner">
-              <div class="rating mb-3">★★★★★</div>
-              <p>Odunayo R is an EXCEPTIONAL UX designer! His creativity and attention to detail truly set him apart</p>
-              <div class="testimonial-author d-flex align-items-center mt-3">
-                <img src="https://media.licdn.com/dms/image/v2/D4D03AQGiIySm_oE6Wg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1681886968311?e=1751500800&v=beta&t=RafTcHtrtfbjDJikWX5MsLTvZ1uwvHVvgttzpRMo_og" class="rounded-circle" alt="Solih Akorede Lawal">
-                <div class="author-info ms-3">
-                  <h4 class="mb-0">Alex Barassa</h4>
-                  <p>Full Stack Developer</p>
-                </div>
-                <div class="country-flag ms-auto">
-                    <img src="https://flagcdn.com/w40/jo.png" alt="Jordan" class="flag-img" onerror="this.src='https://flagpedia.net/data/flags/w580/jo.png'">
-                  </div>
-              </div>
-            </div>
-          </div>
-  
         </div>
-      </div>
     </div>
-  </section>
+</section>
 
 {% if messages %}
           {% for message in messages %}
