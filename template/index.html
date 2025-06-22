@@ -14,7 +14,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Colorblend Creative</title>
+    <title>Odunayo | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -33,568 +33,514 @@
 
 <body>
     <header>
-<!---------------progress bar-->
-<div class="progress-bar" id="scrollProgressBar"></div>
-<div class="content"></div>
+ <!-- Background -->
+    <div class="hero-bg"></div>
+    
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+    </div>
 
-        <!-- place navbar here -->
-
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
                 <img src="{% static 'img/logo.webp' %}" width="32px"/>
-                <a class="navbar-brand" href="#Home"></a>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hero">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#project">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#reviews">Testimonial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
                 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#Home">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#project">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#testimonial">Testimonial</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li><br>
-                    </ul>
-                        
-                            <a class="download-cv text-decoration-none" href="https://drive.google.com/file/d/1oEu9vS5n3G0aAUKfk0kr7PRDF0jmBepe/view?usp=drive_link" target="_blank" >Download CV</a>
-                     
-                </div>
+                <a href="#contact" class="btn btn-nav">
+                    Hire Me
+                </a>
             </div>
-        </nav>
-        
-    </header><Br>
-    <main>
+        </div>
+    </nav>
+
 <!-------------HERO SECTION------------------>
 
-
-<section id="Home" class="hero-section">
-    <div class="container">
-        <div class="row align-items-center">
-            <!-- Text content column -->
-            <div class="col-lg-6 text-content">
-                <div class="welcome-tag">Welcome</div>
-                <h5 class="title">I create digital solutions as<br> a <span class="profession" id="profession"></span> <span class="cursor"></span></h5>
-                <p class="description">I'm a passionate UI/UX Designer, Front-end Developer, and Graphic Designer. I've been helping businesses solve problems and elevate their brands through creative and functional design solutions.</p>
+<!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-subtitle">I create digital solutions as a </h2>
+                <h1 class="hero-title">
+                    <span class="typewriter-container">
+                                <span class="typewriter" id="typewriter">Frontend Developer</span>
+                                <span class="cursor"></span>
+                            </span>
+                </h1>
+                <!-- <p class="location">based in Nigeria</p> -->
                 
-                <!-- Tech stack icons -->
-                <div class="tech-stack">
-                    <div class="tech-icon"><i class="devicon-figma-plain colored"></i><span>Figma</span></div>
-                    <div class="tech-icon"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
-                    <div class="tech-icon"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
-                    <div class="tech-icon"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
-                </div>
-                <a href="#contact" class="contact-btn">Contact me</a>
-                <a href="#project" class="portfolio-btn" style="text-decoration: none; color: #002180;">View my work ↗️</a>
-            </div>
+                <p class="hero-description">
+                    I design websites, apps, and graphics that look good and work well. I help businesses fix design problems, connect better with their users, and build stronger brands through clean and functional design.
 
-            <!-- Image column -->
-            <div class="col-lg-6 image-content text-center">
-                <img src="{% static 'img/Profile.webp' %}" alt="Profile" class="profile-image">
-            </div>
-        </div>
-    </div>
-            
-    <div class="row stats">
-        <div class="col-md-4 stat-item">
-            <div class="stat-number" id="clients">0</div>
-            <div class="stat-label">Satisfied clients</div>
-        </div>
-        <div class="col-md-4 stat-item">
-            <div class="stat-number" id="projects">0</div>
-            <div class="stat-label">Projects completed</div>
-        </div>
-        <div class="col-md-4 stat-item">
-            <div class="stat-number" id="reviews">0</div>
-            <div class="stat-label">Reviews given</div>
-        </div>
-    </div>
-</div>
-</section><br><br>
 
-<!--------About-->
-<section class="about-section" id="about">
-    <div class="container" id="About">
-        <div class="row align-items-center">
-            <div class="col-lg-5 about-image-container">
-                <div class="about-image">
-                    <img src="{% static 'img/Profile.webp' %}" alt="About Me" class="img-fluid about-img">
-                    <div class="image-bg"></div><br><br>
-                </div>
-            </div>
-            <div class="col-lg-7 about-content">
-                <h2 class="section-title" style="color: #002180;">About Me</h2>
-                <p class="about-text">
-                    I'm Ridwanullah, a creative Product Designer and Web Developer with years of experience. I have a passion for crafting intuitive designs that enhance user experiences. My goal is to solve real business challenges through functional and visually appealing solutions. I believe in the power of design and technology to transform ideas into impactful products.
                 </p>
-                <h3 class="skills-title">My Skills</h3>
-                <div class="skills-container">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="skill-item">
-                    <div class="skill-header">
-                      <span>UI/UX DESIGN</span>
-                      <span>90%</span>
-                    </div>
-                    <div class="skill-bar">
-                      <div class="skill-progress" style="width: 90%"></div>
-                    </div>
-                  </div>
-
-                        
-                  <div class="skill-item">
-                    <div class="skill-header">
-                      <span>GRAPHIC DESIGN</span>
-                      <span>80%</span>
-                    </div>
-                    <div class="skill-bar">
-                      <div class="skill-progress" style="width: 80%"></div>
-                    </div>
-                  </div>
-        
-                  <div class="skill-item">
-                    <div class="skill-header">
-                      <span>FRONTEND DEV.</span>
-                      <span>85%</span>
-                    </div>
-                    <div class="skill-bar">
-                      <div class="skill-progress" style="width: 85%"></div>
-                    </div>
-                  </div>
-                </div>  
-            </div>
-        
-        <a href="https://www.upwork.com/freelancers/~019c0cba1e77ec36b0" class="contact-btn" target="_blank">CONTACT ME</a>
-            </div>
-          </div>
-</section>
-
-<!-----SkillS-->
-<section class="skills-section" id="skills">
-<div class="container">
-    <div class="row">
-        <div class="col-lg-4">
-            <span class="skills-label" style="color: #002180;">My Skills</span>
-            <h2 class="section-title">Why Hire Me For Your Next <span id="project">Project?</span></h2>
-            <p class="skills-intro">I combine design and development to create user-friendly, visually striking solutions that solve business challenges</p>
-            <a href="https://www.upwork.com/freelancers/~019c0cba1e77ec36b0" class="contact-btn" target="_blank"> Hire Me</a>
+                
+                <div class="cta-buttons">
+                    <!-- <a href="#contact" class="btn-primary-hero">
+                        <i class="fas fa-envelope me-2"></i>
+                        Let's Connect
+                    </a> -->
+                    <a href="#project" class="btn-outline-hero">
+                        <i class="fas fa-briefcase me-2"></i>
+                        Check My Work
+                    </a>
+                </div>
+                
+                <div class="companies-section">
+    <p class="companies-title">Proudly Worked with some amazing brands</p>
+    <div class="companies-logos">
+        <div class="company-logo">
+            <img src="https://www.emboldlab.com/static/files/img/EmboldLabLogo.05629bb421f0.png" alt="Embold Lab">
         </div>
-        <br>
-        <div class="col-lg-8">
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-desktop"></i>
-                        </div>
-                        <h3>Visual Design</h3>
-                        <p>Create user interface design with unique & modern ideas</p>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-bezier-curve"></i>
-                        </div>
-                        <h3>Design Prototype</h3>
-                        <p>Create advance design prototype with Figma apps</p>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-bezier-curve"></i>
-                        </div>
-                        <h3>UX Research</h3>
-                        <p>Create digital user products with updated ideas</p>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-desktop"></i>
-                        </div>
-                        <h3>Responsive Web Design</h3>
-                        <p>Creating websites that look great on all devices and screen sizes</p>
-                    </div>
-                </div>
-            </div>
+        <div class="company-logo">
+            <img src="https://www.noblezawaaj.com/assets/images/nZ-full-transperent.png" alt="Noble Zawaaj">
         </div>
+        <!-- <div class="company-logo">
+            <img src="https://www.effico.co/assets/effico-icon-BPudjvQN.png" alt="Effico">
+        </div> -->
     </div>
 </div>
-</section>
+            </div>
+        </div>
+        
 
+    </section>
 
 <!-----------------Portfolio-->
 
-<section id="project" class="section project">
+<section id="project" class="section project py-5">
     <div class="container">
-        <span class="portfolio-label">Portfolio</span>
-        <div class="d-flex justify-content-between align-items-center mb-2">
-            <h2 class="section-title">My Latest <span id="Creations">Creations</span></h2>
-            <a href="https://www.behance.net/ridwanullahoyelami" class="view-all-btn" target="_blank" rel="noopener noreferrer">Behance Profile</a>
-        </div>
-        <p class="portfolio-intro mb-3">
-            Explore my recent Design works 
-        </p>
+        <!-- Header Section -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="text-center portfolio-header">
+                    <span class="portfolio-label d-inline-block mb-3">Projects Completed</span>
+                    <div class="text-center mb-4">
+                          <h2 class="section-title">Explore my recent design <span class="text-accent">Creations</span></h2>
+                          <a href="https://www.behance.net/ridwanullahoyelami" class="view-all-btn mt-3 d-inline-block" target="_blank">
+                              <i class="fab fa-behance me-2"></i>Behance Profile
+                          </a>
+                      </div>
 
-        <!-- Project Filter Buttons -->
-        <div class="project-filter mb-4">
-            <button class="filter-btn active" data-filter="all">All Projects</button>
-            <button class="filter-btn" data-filter="uiux">UI/UX Design</button>
-            <button class="filter-btn" data-filter="frontend">Web Development</button>
-            <!-- <button class="filter-btn" data-filter="graphics">Graphics Design</button> -->
+                    
+                </div>
+            </div>
         </div>
 
-        <div class="row project-container">
-            <!-- Abfallcare Mobile App - UI/UX -->
-            <div class="col-md-4 project-item uiux">
+        <!-- Filter Buttons -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="project-filter d-flex flex-wrap justify-content-center gap-3">
+                    <button class="filter-btn active" data-filter="all">
+                        <i class="fas fa-grid-2-plus me-2"></i>All Projects
+                    </button>
+                    <button class="filter-btn" data-filter="uiux">
+                        <i class="fas fa-paint-brush me-2"></i>UI/UX Design
+                    </button>
+                    <button class="filter-btn" data-filter="frontend">
+                        <i class="fas fa-code me-2"></i>Web Development
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="row g-4 project-container">
+            <!-- Abfallcare Mobile App -->
+            <div class="col-lg-4 col-md-6 project-item uiux">
                 <div class="portfolio-card">
                     <div class="portfolio-image">
                         <img src="{% static 'img/abfallcare.webp' %}" alt="Abfallcare app" class="img-fluid">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <span class="project-category">UI/UX Design</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="portfolio-content">
-                        <h3>AbfallCare Appp</h3>
+                        <h3>AbfallCare App</h3>
                         <p>The Waste Management App is a digital solution designed to streamline waste collection, tracking, and reporting processes.</p>
                         <div class="project-actions">
-                            <a href="https://www.figma.com/proto/KR0pFkmeY6fR2xmSeEmfna/Abfallcare--my-copy-?node-id=151-4264&p=f&t=SfNBEfXULxFtAk8J-1&scaling=scale-down&content-scaling=fixed&page-id=97%3A1679&starting-point-node-id=151%3A5445" class="action-btn prototype-btn" target="_blank" rel="noopener noreferrer">
-                                <i class="fas fa-play"></i> View Prototype
+                            <a href="https://www.figma.com/proto/KR0pFkmeY6fR2xmSeEmfna/Abfallcare--my-copy-?node-id=151-4264&p=f&t=SfNBEfXULxFtAk8J-1&scaling=scale-down&content-scaling=fixed&page-id=97%3A1679&starting-point-node-id=151%3A5445" class="action-btn prototype-btn" target="_blank">
+                                <i class="fas fa-play me-2"></i>View Prototype
                             </a>
-                            <a href="https://www.behance.net/gallery/224659397/ABFALLCARE-WASTE-MANAGEMENT" class="action-btn case-study-btn" target="_blank" rel="noopener noreferrer">
-                                View Case Study
+                            <a href="https://www.behance.net/gallery/224659397/ABFALLCARE-WASTE-MANAGEMENT" class="action-btn case-study-btn" target="_blank">
+                                <i class="fas fa-external-link-alt me-2"></i>Case Study
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Borrowme - UI/UX -->
-            <div class="col-md-4 project-item uiux">
+            <!-- BorrowMe App -->
+            <div class="col-lg-4 col-md-6 project-item uiux">
                 <div class="portfolio-card">
                     <div class="portfolio-image">
                         <img src="{% static 'img/Borrowme.webp' %}" alt="Borrowne" style="height:100%;" class="img-fluid">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <span class="project-category">UI/UX Design</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="portfolio-content">
-                        <h3 class="label">BorrowMe App</h3>
+                        <h3>BorrowMe App</h3>
                         <p>An innovative app designed to help users track loans and manage lending borrowing activities.</p>
                         <div class="project-actions">
-                        <a href="https://www.behance.net/gallery/207575807/Borrwing-Lending-app" class="action-btn case-study-btn" target="_blank" rel="noopener noreferrer">
-                                View Case Study
+                            <a href="https://www.behance.net/gallery/207575807/Borrwing-Lending-app" class="action-btn case-study-btn" target="_blank">
+                                <i class="fas fa-external-link-alt me-2"></i>Case Study
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Urbanest - UI/UX -->
-            <div class="col-md-4 project-item uiux">
+            <!-- Real Estate Website -->
+            <div class="col-lg-4 col-md-6 project-item uiux">
                 <div class="portfolio-card">
                     <div class="portfolio-image">
                         <img src="{% static 'img/urbanest.webp' %}" alt="Urbanest" class="img-fluid">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <span class="project-category">UI/UX Design</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="portfolio-content">
-                        <h3>Real Estate website</h3>
-                        <p>A website designed to simplify proprty search and transaction.</p>
+                        <h3>Real Estate Website</h3>
+                        <p>A website designed to simplify property search and transaction.</p>
                         <div class="project-actions">
-                             <a href="https://www.behance.net/gallery/214197451/Real-Estate-Website" class="action-btn case-study-btn" target="_blank" rel="noopener noreferrer">
-                                View Case Study
+                            <a href="https://www.behance.net/gallery/214197451/Real-Estate-Website" class="action-btn case-study-btn" target="_blank">
+                                <i class="fas fa-external-link-alt me-2"></i>Case Study
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Frontend-->
-            <div class="col-md-4 project-item frontend">
+            <!-- BuffPepe Landing Page -->
+            <div class="col-lg-4 col-md-6 project-item frontend">
                 <div class="portfolio-card">
                     <div class="portfolio-image">
                         <img src="{% static 'img/Buffpepe.webp' %}" alt="Hugecircle Website" class="img-fluid">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <span class="project-category">Web Development</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="portfolio-content">
-                        <h3>BuffPepe Landing page</h3>
+                        <h3>BuffPepe Landing Page</h3>
                         <p>The BuffPepe landing page offers a vibrant and engaging introduction to the BuffPepe memecoin, capturing its playful yet impactful presence in the crypto world.</p>
                         <div class="project-actions">
-                            <a href="https://buffpepe.io/" class="action-btn website-btn" target="_blank" rel="noopener noreferrer">
-                                View Website
+                            <a href="https://colorblendcreatives.github.io/buffpepe/" class="action-btn website-btn" target="_blank">
+                                <i class="fas fa-globe me-2"></i>View Website
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- saffron - Frontend -->
-            <div class="col-md-4 project-item frontend">
+            <!-- Saffrongas -->
+            <div class="col-lg-4 col-md-6 project-item frontend">
                 <div class="portfolio-card">
                     <div class="portfolio-image">
-                        <img src="{% static 'img/Saffrongas.webp' %}" alt="Awamonie" class="img-fluid">
+                         <img src="{% static 'img/Saffrongas.webp' %}" alt="Awamonie" class="img-fluid">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <span class="project-category">Web Development</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="portfolio-content">
                         <h3>Saffrongas</h3>
-                        <p>SaffronGas provides a user-friendly platform for ordering gas and accessories, offering convenience and reliability for all your fuel needs</p>
+                        <p>SaffronGas provides a user-friendly platform for ordering gas and accessories, offering convenience and reliability for all your fuel needs.</p>
                         <div class="project-actions">
-                            <a href="https://colorblendcreatives.github.io/Saffrongas/" class="action-btn website-btn" target="_blank" rel="noopener noreferrer">
-                                View Website
+                            <a href="https://colorblendcreatives.github.io/Saffrongas/" class="action-btn website-btn" target="_blank">
+                                <i class="fas fa-globe me-2"></i>View Website
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Hugecircle - UI/UX -->
-            <div class="col-md-4 project-item uiux">
+            <!-- Hugecircle Website -->
+            <div class="col-lg-4 col-md-6 project-item uiux">
                 <div class="portfolio-card">
                     <div class="portfolio-image">
                         <img src="{% static 'img/Hugecircle.webp' %}" alt="Awamonie" class="img-fluid">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <span class="project-category">UI/UX Design</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="portfolio-content">
                         <h3>Hugecircle Website</h3>
-                        <p>luxurious website design for Higecircle, featuring a sleek user interface and smooth navigation for an upscale dessert experience</p>
+                        <p>Luxurious website design for Hugecircle, featuring a sleek user interface and smooth navigation for an upscale dessert experience.</p>
                         <div class="project-actions">
-                            <a href="https://www.behance.net/gallery/203471085/HUGECIRCLE-gluten-free-desserts-website" class="action-btn case-study-btn" target="_blank" rel="noopener noreferrer">
-                                View Case Study
+                            <a href="https://www.behance.net/gallery/203471085/HUGECIRCLE-gluten-free-desserts-website" class="action-btn case-study-btn" target="_blank">
+                                <i class="fas fa-external-link-alt me-2"></i>Case Study
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-              
-            <!-- Web 3 Landing Page - UI/UX -->
-            <div class="col-md-4 project-item uiux">
+
+            <!-- Web 3 Landing Page -->
+            <div class="col-lg-4 col-md-6 project-item uiux">
                 <div class="portfolio-card">
                     <div class="portfolio-image">
                         <img src="{% static 'img/WEB3.webp' %}" alt="Web 3 Landing Page" class="img-fluid">
-                    </div>
-                    <div class="portfolio-content">
-                        <h3 class="label">Web 3 Landing Page</h3>
-                        <p>A sleek, future-ready Web3 landing page designed for seamless user engagement and decentralized experiences.</p>
-                        <div class="project-actions">
-                            <a href="https://www.behance.net/gallery/209938091/WEB-3-LANDING-PAGE-DESIGN" class="action-btn case-study-btn" target="_blank" rel="noopener noreferrer">
-                                View Design
-                            </a>
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <span class="project-category">UI/UX Design</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-              
-            <!-- Awamonie - UI/UX -->
-            <div class="col-md-4 project-item uiux">
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <img src="{% static 'img/Awamonie.webp' %}" alt="Borrowme" style="height:100%;" class="img-fluid">
-                    </div>
                     <div class="portfolio-content">
-                        <h3 class="label">Awamonie App</h3>
-                        <p>An innovative app designed to help users track loans and manage lending borrowing activities.</p>
+                        <h3>Web 3 Landing Page</h3>
+                        <p>A sleek, future-ready Web3 landing page designed for seamless user engagement and decentralized experiences.</p>
                         <div class="project-actions">
-                            <a href="https://www.behance.net/gallery/207575807/Borrwing-Lending-app" class="action-btn case-study-btn" target="_blank" rel="noopener noreferrer">
-                                View Case Study
+                            <a href="https://www.behance.net/gallery/209938091/WEB-3-LANDING-PAGE-DESIGN" class="action-btn case-study-btn" target="_blank">
+                                <i class="fas fa-external-link-alt me-2"></i>View Design
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <div class="text-right mt-5">
-            <a href="https://www.behance.net/ridwanullahoyelami" class="btn view-all-btn" target="_blank" rel="noopener noreferrer">View all</a>
+
+        <!-- View All Button -->
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <a href="https://www.behance.net/ridwanullahoyelami" class="view-all-main-btn" target="_blank">
+                    <i class="fab fa-behance me-2"></i>View All Projects
+                    <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+            </div>
         </div>
     </div>
 </section>
+
 <!-----------TEstimonial ------>
-<section id="testimonial" class="section testimonials">
-  <div class="container">
-    <span class="review-label">Reviews</span>
-    <h2 class="section-title">
-      What my Clients are saying <span id="project">About Me</span>
-    </h2>
-    <div class="testimonial-carousel-container mt-5">
-      <div id="testimonialTrack" class="testimonial-track">
-        <!-- Original testimonials -->
-        <!-- Testimonial 1 -->
-        <div class="testimonial-card">
-          <div class="card-inner">
-            <div class="rating mb-3">★★★★★</div>
-            <p>Odunayo Ridwanullah Oyelami is a highly skilled designer with impressive initiative and vision, often creating features that drive new revenue.</p>
-            <div class="testimonial-author d-flex align-items-center mt-3">
-              <img src="https://media.licdn.com/dms/image/v2/D4D03AQFAxoYSDEqz0g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1700882500339?e=1751500800&v=beta&t=Va3ZxiGnsUxhmmdqESQq8eJXhB4WV8QFkJMQsyt_i-s" class="rounded-circle" alt="M.O.A Lawal">
-              <div class="author-info ms-3">
-                <h4 class="mb-0">M.O.A Lawal</h4>
-                <p>Founder | Effico AI</p>
-              </div>
-              <div class="country-flag ms-auto">
-                <img src="https://flagcdn.com/w40/ng.png" alt="Nigeria" class="flag-img">
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Testimonial 2 -->
-        <div class="testimonial-card">
-          <div class="card-inner">
-            <div class="rating mb-3">★★★★★</div>
-            <p>For the BorrowMe project, Odunayo efficiently delivered high-quality, user-friendly designs in record time.</p>
-            <div class="testimonial-author d-flex align-items-center mt-3">
-              <img src="https://media.licdn.com/dms/image/v2/D4E03AQFkpwQZEPw-qg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1722720994764?e=1751500800&v=beta&t=98TIj7VekCeOqAD7vdYyC6zShKIcirv81GCMT4vKPvw" class="rounded-circle" alt="Solih Akorede Lawal">
-              <div class="author-info ms-3">
-                <h4 class="mb-0">Solih Akorede Lawal</h4>
-                <p>Full Stack Developer</p>
-              </div>
-              <div class="country-flag ms-auto">
-                <img src="https://flagcdn.com/w40/ng.png" alt="Nigeria" class="flag-img">
+<section id="reviews" class="section testimonials" id>
+    <div class="container">
+      <span class="review-label">Reviews</span>
+      <h2 class="section-title">
+        What my Clients are saying <span id="project">About Me</span>
+      </h2>
+      <div class="testimonial-carousel-container mt-5">
+        <div id="testimonialTrack" class="testimonial-track">
+          <!-- Original testimonials -->
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card">
+            <div class="card-inner">
+              <div class="rating mb-3">★★★★★</div>
+              <p>Odunayo Ridwanullah Oyelami is a highly skilled designer with impressive initiative and vision, often creating features that drive new revenue.</p>
+              <div class="testimonial-author d-flex align-items-center mt-3">
+                <img src="https://media.licdn.com/dms/image/v2/D4D03AQFAxoYSDEqz0g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1700882500339?e=1751500800&v=beta&t=Va3ZxiGnsUxhmmdqESQq8eJXhB4WV8QFkJMQsyt_i-s" class="rounded-circle" alt="M.O.A Lawal">
+                <div class="author-info ms-3">
+                  <h4 class="mb-0">M.O.A Lawal</h4>
+                  <p>Founder | Effico AI</p>
+                </div>
+                <div class="country-flag ms-auto">
+                  <img src="https://flagcdn.com/w40/ng.png" alt="Nigeria" class="flag-img">
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        
-        <!-- Testimonial 3 -->
-        <div class="testimonial-card">
-          <div class="card-inner">
-            <div class="rating mb-3">★★★★★</div>
-            <p>Odunayo delivered exceptional design work. His professionalism and attention to detail exceeded our expectations. I highly recommend him.</p>
-            <div class="testimonial-author d-flex align-items-center mt-3">
-              <img src="https://media.licdn.com/dms/image/v2/D4E03AQE1Rv34h5fY7Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1723745916357?e=1751500800&v=beta&t=menc_Qjya-QeTsWB0dqK5r_zlyd71FTzHr-8fWm7_zU" class="rounded-circle" alt="Gabriel Iruaga">
-              <div class="author-info ms-3">
-                <h4 class="mb-0">Gabriel Iruaga</h4>
-                <p>Founder | Embold Lab</p>
-              </div>
-              <div class="country-flag ms-auto">
-                <img src="https://flagcdn.com/w40/gb.png" alt="Nigeria" class="flag-img">
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Testimonial 4 -->
-        <div class="testimonial-card">
-          <div class="card-inner">
-            <div class="rating mb-3">★★★★★</div>
-            <p>The landing page looks clean, professional, and matches what I had in mind. Thank you for your effort and attention to detail. I'm very satisfied with your work!</p>
-            <div class="testimonial-author d-flex align-items-center mt-3">
-              <img src="https://colorblendcreatives.github.io/buffpepe/logo.webp" class="rounded-circle" alt="M.O.A Lawal">
-              <div class="author-info ms-3">
-                <h4 class="mb-0">Asta</h4>
-                <p>Founder | BuffPepe</p>
-              </div>
-              <div class="country-flag ms-auto">
-                <img src="https://flagcdn.com/w40/jp.png" alt="Japan" class="flag-img">
+          
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card">
+            <div class="card-inner">
+              <div class="rating mb-3">★★★★★</div>
+              <p>For the BorrowMe project, Odunayo efficiently delivered high-quality, user-friendly designs in record time.</p>
+              <div class="testimonial-author d-flex align-items-center mt-3">
+                <img src="https://media.licdn.com/dms/image/v2/D4E03AQFkpwQZEPw-qg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1722720994764?e=1751500800&v=beta&t=98TIj7VekCeOqAD7vdYyC6zShKIcirv81GCMT4vKPvw" class="rounded-circle" alt="Solih Akorede Lawal">
+                <div class="author-info ms-3">
+                  <h4 class="mb-0">Solih Akorede Lawal</h4>
+                  <p>Full Stack Developer</p>
+                </div>
+                <div class="country-flag ms-auto">
+                  <img src="https://flagcdn.com/w40/ng.png" alt="Nigeria" class="flag-img">
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        
-        <!-- Testimonial 5 -->
-        <div class="testimonial-card">
-          <div class="card-inner">
-            <div class="rating mb-3">★★★★★</div>
-            <p>Odunayo R is an EXCEPTIONAL UX designer! His creativity and attention to detail truly set him apart</p>
-            <div class="testimonial-author d-flex align-items-center mt-3">
-              <img src="https://media.licdn.com/dms/image/v2/D4D03AQGiIySm_oE6Wg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1681886968311?e=1751500800&v=beta&t=RafTcHtrtfbjDJikWX5MsLTvZ1uwvHVvgttzpRMo_og" class="rounded-circle" alt="Solih Akorede Lawal">
-              <div class="author-info ms-3">
-                <h4 class="mb-0">Alex Barassa</h4>
-                <p>Full Stack Developer</p>
-              </div>
-              <div class="country-flag ms-auto">
-                <img src="https://flagcdn.com/w40/jo.png" alt="Jordan" class="flag-img" onerror="this.src='https://flagpedia.net/data/flags/w580/jo.png'">
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Duplicate testimonials for continuous scrolling - exact copy of above -->
-        <!-- Testimonial 1 (duplicate) -->
-        <div class="testimonial-card">
-          <div class="card-inner">
-            <div class="rating mb-3">★★★★★</div>
-            <p>Odunayo Ridwanullah Oyelami is a highly skilled designer with impressive initiative and vision, often creating features that drive new revenue.</p>
-            <div class="testimonial-author d-flex align-items-center mt-3">
-              <img src="https://media.licdn.com/dms/image/v2/D4D03AQFAxoYSDEqz0g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1700882500339?e=1751500800&v=beta&t=Va3ZxiGnsUxhmmdqESQq8eJXhB4WV8QFkJMQsyt_i-s" class="rounded-circle" alt="M.O.A Lawal">
-              <div class="author-info ms-3">
-                <h4 class="mb-0">M.O.A Lawal</h4>
-                <p>Founder | Effico AI</p>
-              </div>
-              <div class="country-flag ms-auto">
-                <img src="https://flagcdn.com/w40/ng.png" alt="Nigeria" class="flag-img">
+          
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card">
+            <div class="card-inner">
+              <div class="rating mb-3">★★★★★</div>
+              <p>Odunayo delivered exceptional design work. His professionalism and attention to detail exceeded our expectations. I highly recommend him.</p>
+              <div class="testimonial-author d-flex align-items-center mt-3">
+                <img src="https://media.licdn.com/dms/image/v2/D4E03AQE1Rv34h5fY7Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1723745916357?e=1751500800&v=beta&t=menc_Qjya-QeTsWB0dqK5r_zlyd71FTzHr-8fWm7_zU" class="rounded-circle" alt="Gabriel Iruaga">
+                <div class="author-info ms-3">
+                  <h4 class="mb-0">Gabriel Iruaga</h4>
+                  <p>Founder | Embold Lab</p>
+                </div>
+                <div class="country-flag ms-auto">
+                  <img src="https://flagcdn.com/w40/gb.png" alt="Nigeria" class="flag-img">
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        
-        <!-- Testimonial 2 (duplicate) -->
-        <div class="testimonial-card">
-          <div class="card-inner">
-            <div class="rating mb-3">★★★★★</div>
-            <p>For the BorrowMe project, Odunayo efficiently delivered high-quality, user-friendly designs in record time.</p>
-            <div class="testimonial-author d-flex align-items-center mt-3">
-              <img src="https://media.licdn.com/dms/image/v2/D4E03AQFkpwQZEPw-qg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1722720994764?e=1751500800&v=beta&t=98TIj7VekCeOqAD7vdYyC6zShKIcirv81GCMT4vKPvw" class="rounded-circle" alt="Solih Akorede Lawal">
-              <div class="author-info ms-3">
-                <h4 class="mb-0">Solih Akorede Lawal</h4>
-                <p>Full Stack Developer</p>
-              </div>
-              <div class="country-flag ms-auto">
-                <img src="https://flagcdn.com/w40/ng.png" alt="Nigeria" class="flag-img">
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Testimonial 3 (duplicate) -->
-        <div class="testimonial-card">
-          <div class="card-inner">
-            <div class="rating mb-3">★★★★★</div>
-            <p>Odunayo delivered exceptional design work. His professionalism and attention to detail exceeded our expectations. I highly recommend him.</p>
-            <div class="testimonial-author d-flex align-items-center mt-3">
-              <img src="https://media.licdn.com/dms/image/v2/D4E03AQE1Rv34h5fY7Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1723745916357?e=1751500800&v=beta&t=menc_Qjya-QeTsWB0dqK5r_zlyd71FTzHr-8fWm7_zU" class="rounded-circle" alt="Gabriel Iruaga">
-              <div class="author-info ms-3">
-                <h4 class="mb-0">Gabriel Iruaga</h4>
-                <p>Founder | Embold Lab</p>
-              </div>
-              <div class="country-flag ms-auto">
-                <img src="https://flagcdn.com/w40/gb.png" alt="Nigeria" class="flag-img">
+          
+          <!-- Testimonial 4 -->
+          <div class="testimonial-card">
+            <div class="card-inner">
+              <div class="rating mb-3">★★★★★</div>
+              <p>The landing page looks clean, professional, and matches what I had in mind. Thank you for your effort and attention to detail. I'm very satisfied with your work!</p>
+              <div class="testimonial-author d-flex align-items-center mt-3">
+                <img src="https://colorblendcreatives.github.io/buffpepe/logo.webp" class="rounded-circle" alt="M.O.A Lawal">
+                <div class="author-info ms-3">
+                  <h4 class="mb-0">Asta</h4>
+                  <p>Founder | BuffPepe</p>
+                </div>
+                <div class="country-flag ms-auto">
+                  <img src="https://flagcdn.com/w40/jp.png" alt="Japan" class="flag-img">
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        
-        <!-- Testimonial 4 (duplicate) -->
-        <div class="testimonial-card">
-          <div class="card-inner">
-            <div class="rating mb-3">★★★★★</div>
-            <p>The landing page looks clean, professional, and matches what I had in mind. Thank you for your effort and attention to detail. I'm very satisfied with your work!</p>
-            <div class="testimonial-author d-flex align-items-center mt-3">
-              <img src="https://colorblendcreatives.github.io/buffpepe/logo.webp" class="rounded-circle" alt="M.O.A Lawal">
-              <div class="author-info ms-3">
-                <h4 class="mb-0">Asta</h4>
-                <p>Founder | BuffPepe</p>
-              </div>
-              <div class="country-flag ms-auto">
-                <img src="https://flagcdn.com/w40/jp.png" alt="Japan" class="flag-img">
+          
+          <!-- Testimonial 5 -->
+          <div class="testimonial-card">
+            <div class="card-inner">
+              <div class="rating mb-3">★★★★★</div>
+              <p>Odunayo R is an EXCEPTIONAL UX designer! His creativity and attention to detail truly set him apart</p>
+              <div class="testimonial-author d-flex align-items-center mt-3">
+                <img src="https://media.licdn.com/dms/image/v2/D4D03AQGiIySm_oE6Wg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1681886968311?e=1751500800&v=beta&t=RafTcHtrtfbjDJikWX5MsLTvZ1uwvHVvgttzpRMo_og" class="rounded-circle" alt="Solih Akorede Lawal">
+                <div class="author-info ms-3">
+                  <h4 class="mb-0">Alex Barassa</h4>
+                  <p>Full Stack Developer</p>
+                </div>
+                <div class="country-flag ms-auto">
+                  <img src="https://flagcdn.com/w40/jo.png" alt="Jordan" class="flag-img" onerror="this.src='https://flagpedia.net/data/flags/w580/jo.png'">
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        
-        <!-- Testimonial 5 (duplicate) -->
-        <div class="testimonial-card">
-          <div class="card-inner">
-            <div class="rating mb-3">★★★★★</div>
-            <p>Odunayo R is an EXCEPTIONAL UX designer! His creativity and attention to detail truly set him apart</p>
-            <div class="testimonial-author d-flex align-items-center mt-3">
-              <img src="https://media.licdn.com/dms/image/v2/D4D03AQGiIySm_oE6Wg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1681886968311?e=1751500800&v=beta&t=RafTcHtrtfbjDJikWX5MsLTvZ1uwvHVvgttzpRMo_og" class="rounded-circle" alt="Solih Akorede Lawal">
-              <div class="author-info ms-3">
-                <h4 class="mb-0">Alex Barassa</h4>
-                <p>Full Stack Developer</p>
+          
+          <!-- Duplicate testimonials for continuous scrolling - exact copy of above -->
+          <!-- Testimonial 1 (duplicate) -->
+          <div class="testimonial-card">
+            <div class="card-inner">
+              <div class="rating mb-3">★★★★★</div>
+              <p>Odunayo Ridwanullah Oyelami is a highly skilled designer with impressive initiative and vision, often creating features that drive new revenue.</p>
+              <div class="testimonial-author d-flex align-items-center mt-3">
+                <img src="https://media.licdn.com/dms/image/v2/D4D03AQFAxoYSDEqz0g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1700882500339?e=1751500800&v=beta&t=Va3ZxiGnsUxhmmdqESQq8eJXhB4WV8QFkJMQsyt_i-s" class="rounded-circle" alt="M.O.A Lawal">
+                <div class="author-info ms-3">
+                  <h4 class="mb-0">M.O.A Lawal</h4>
+                  <p>Founder | Effico AI</p>
+                </div>
+                <div class="country-flag ms-auto">
+                  <img src="https://flagcdn.com/w40/ng.png" alt="Nigeria" class="flag-img">
+                </div>
               </div>
-              <div class="country-flag ms-auto">
-                <img src="https://flagcdn.com/w40/jo.png" alt="Jordan" class="flag-img" onerror="this.src='https://flagpedia.net/data/flags/w580/jo.png'">
+            </div>
+          </div>
+          
+          <!-- Testimonial 2 (duplicate) -->
+          <div class="testimonial-card">
+            <div class="card-inner">
+              <div class="rating mb-3">★★★★★</div>
+              <p>For the BorrowMe project, Odunayo efficiently delivered high-quality, user-friendly designs in record time.</p>
+              <div class="testimonial-author d-flex align-items-center mt-3">
+                <img src="https://media.licdn.com/dms/image/v2/D4E03AQFkpwQZEPw-qg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1722720994764?e=1751500800&v=beta&t=98TIj7VekCeOqAD7vdYyC6zShKIcirv81GCMT4vKPvw" class="rounded-circle" alt="Solih Akorede Lawal">
+                <div class="author-info ms-3">
+                  <h4 class="mb-0">Solih Akorede Lawal</h4>
+                  <p>Full Stack Developer</p>
+                </div>
+                <div class="country-flag ms-auto">
+                  <img src="https://flagcdn.com/w40/ng.png" alt="Nigeria" class="flag-img">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Testimonial 3 (duplicate) -->
+          <div class="testimonial-card">
+            <div class="card-inner">
+              <div class="rating mb-3">★★★★★</div>
+              <p>Odunayo delivered exceptional design work. His professionalism and attention to detail exceeded our expectations. I highly recommend him.</p>
+              <div class="testimonial-author d-flex align-items-center mt-3">
+                <img src="https://media.licdn.com/dms/image/v2/D4E03AQE1Rv34h5fY7Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1723745916357?e=1751500800&v=beta&t=menc_Qjya-QeTsWB0dqK5r_zlyd71FTzHr-8fWm7_zU" class="rounded-circle" alt="Gabriel Iruaga">
+                <div class="author-info ms-3">
+                  <h4 class="mb-0">Gabriel Iruaga</h4>
+                  <p>Founder | Embold Lab</p>
+                </div>
+                <div class="country-flag ms-auto">
+                  <img src="https://flagcdn.com/w40/gb.png" alt="Nigeria" class="flag-img">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Testimonial 4 (duplicate) -->
+          <div class="testimonial-card">
+            <div class="card-inner">
+              <div class="rating mb-3">★★★★★</div>
+              <p>The landing page looks clean, professional, and matches what I had in mind. Thank you for your effort and attention to detail. I'm very satisfied with your work!</p>
+              <div class="testimonial-author d-flex align-items-center mt-3">
+                <img src="https://colorblendcreatives.github.io/buffpepe/logo.webp" class="rounded-circle" alt="M.O.A Lawal">
+                <div class="author-info ms-3">
+                  <h4 class="mb-0">Asta</h4>
+                  <p>Founder | BuffPepe</p>
+                </div>
+                <div class="country-flag ms-auto">
+                  <img src="https://flagcdn.com/w40/jp.png" alt="Japan" class="flag-img">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Testimonial 5 (duplicate) -->
+          <div class="testimonial-card">
+            <div class="card-inner">
+              <div class="rating mb-3">★★★★★</div>
+              <p>Odunayo R is an EXCEPTIONAL UX designer! His creativity and attention to detail truly set him apart</p>
+              <div class="testimonial-author d-flex align-items-center mt-3">
+                <img src="https://media.licdn.com/dms/image/v2/D4D03AQGiIySm_oE6Wg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1681886968311?e=1751500800&v=beta&t=RafTcHtrtfbjDJikWX5MsLTvZ1uwvHVvgttzpRMo_og" class="rounded-circle" alt="Solih Akorede Lawal">
+                <div class="author-info ms-3">
+                  <h4 class="mb-0">Alex Barassa</h4>
+                  <p>Full Stack Developer</p>
+                </div>
+                <div class="country-flag ms-auto">
+                  <img src="https://flagcdn.com/w40/jo.png" alt="Jordan" class="flag-img" onerror="this.src='https://flagpedia.net/data/flags/w580/jo.png'">
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
 {% if messages %}
           {% for message in messages %}
