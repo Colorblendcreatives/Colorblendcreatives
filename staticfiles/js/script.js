@@ -1,17 +1,4 @@
-//nav bar to close //
-const navLinks = document.querySelectorAll('.nav-link');
-const navbarCollapse = document.getElementById('navbarNav');
-
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    if (navbarCollapse.classList.contains('show')) {
-      new bootstrap.Collapse(navbarCollapse).hide();
-    }
-  });
-});
  
-  
-
 // Scroll to the top on reload and page load
 window.addEventListener('DOMContentLoaded', (event) => {
     window.scrollTo(0, 0);
@@ -21,108 +8,88 @@ window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 };
 
+ 
+ // Typewriter Effect
+        const typewriter = document.getElementById('typewriter');
+        const texts = ['Frontend Developer', 'UI/UX Designer', 'Website Designer'];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typeSpeed = 100;
 
-
-//progressbar//
-
-window.addEventListener('scroll', function() {
-    let winScroll = document.documentElement.scrollTop;
-    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    let scrolled = (winScroll / height) * 100;
-    document.getElementById("scrollProgressBar").style.width = scrolled + "%";
-});
-
-
-// Typewriter effect
-const professions = ['UI/UX Designer', 'Front-end Developer','Graphic Designer',];
-let professionIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-let isPaused = false;
-const typingSpeed = 100;
-const deleteSpeed = 50;
-const pauseDuration = 2000;
-
-function typeWriter() {
-    const currentText = professions[professionIndex];
-    const professionElement = document.getElementById('profession');
-
-    if (!isDeleting && charIndex <= currentText.length) {
-        professionElement.textContent = currentText.substring(0, charIndex);
-        charIndex++;
-    } else if (!isDeleting && !isPaused) {
-        isPaused = true;
-        setTimeout(() => {
-            isDeleting = true;
-            isPaused = false;
-        }, pauseDuration);
-    } else if (isDeleting && charIndex > 0) {
-        professionElement.textContent = currentText.substring(0, charIndex - 1);
-        charIndex--;
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        professionIndex = (professionIndex + 1) % professions.length;
-    }
-
-    const speed = isDeleting ? deleteSpeed : typingSpeed;
-    setTimeout(typeWriter, speed);
-}
-
-// Initialize animations
-document.addEventListener('DOMContentLoaded', () => {
-    typeWriter();  // Keep the typewriter effect if you're using it
-    
-    // Counter animations
-    animateCounter(document.getElementById('clients'), 10);
-    animateCounter(document.getElementById('projects'), 50);
-    animateCounter(document.getElementById('reviews'), 34);
-});
-
-// Counter animation function
-document.addEventListener('DOMContentLoaded', () => {
-    const counters = [
-        { element: document.getElementById('clients'), target: 10 },
-        { element: document.getElementById('projects'), target: 25 },
-        { element: document.getElementById('reviews'), target: 34 },
-    ];
-
-    // Function to animate the counter
-    function animateCounter(element, target) {
-        let current = 0;
-        const increment = target / 100;
-        const duration = 2000;
-        const interval = duration / (target / increment);
-
-        const counter = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                current = target;
-                clearInterval(counter);
+        function typeText() {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                typewriter.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+                typeSpeed = 50;
+            } else {
+                typewriter.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+                typeSpeed = 100;
             }
-            element.textContent = Math.floor(current) + '+';
-        }, interval);
-    }
 
-    // Set up Intersection Observer
-    const observerOptions = {
-        threshold: 0.5 // Adjust the visibility threshold as needed
-    };
+            if (!isDeleting && charIndex === currentText.length) {
+                typeSpeed = 2000; // Pause at end
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                typeSpeed = 500; // Pause before typing next word
+            }
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                const counter = counters.find(c => c.element === entry.target);
-                if (counter && counter.element.textContent === '0') { // Start only if the counter is at zero
-                    animateCounter(counter.element, counter.target);
-                }
-                observer.unobserve(entry.target); // Stop observing after the counter starts
+            setTimeout(typeText, typeSpeed);
+        }
+
+        // Start typewriter effect
+        typeText();
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
             }
         });
-    }, observerOptions);
 
-    // Observe each counter element
-    counters.forEach(counter => observer.observe(counter.element));
-});
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Parallax effect for floating shapes
+        window.addEventListener('scroll', () => {
+            const scrollY = window.pageYOffset;
+            const shapes = document.querySelectorAll('.floating-shape');
+            
+            shapes.forEach((shape, index) => {
+                const speed = 0.3 + (index * 0.1);
+                shape.style.transform = `translateY(${scrollY * speed}px) rotate(${scrollY * 0.05}deg)`;
+            });
+        });
+
+        // Add some interactive hover effects
+        document.querySelectorAll('.company-logo').forEach(logo => {
+            logo.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.05)';
+            });
+            
+            logo.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
 
 // About animation
 document.addEventListener("DOMContentLoaded", function () {
@@ -156,110 +123,143 @@ document.addEventListener("DOMContentLoaded", function () {
     handleScrollAnimation();
 });
 
-// Why hire mw
+
+//Projects Completed
 document.addEventListener('DOMContentLoaded', function() {
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            projectItems.forEach(item => {
+                item.classList.add('hide');
+                item.classList.remove('animate');
+            });
+
+            // Wait for hide animation to complete
+            setTimeout(() => {
+                const visibleItems = [];
+                
+                projectItems.forEach(item => {
+                    if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                        visibleItems.push(item);
+                    }
+                });
+
+                // Show filtered items with staggered animation
+                visibleItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.remove('hide');
+                        item.classList.add('animate');
+                    }, index * 100);
+                });
+            }, 300);
+        });
+    });
+
+    // Scroll animation
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Animate the left content
-                const leftContent = document.querySelector('.col-lg-4');
-                if (leftContent) {
-                    setTimeout(() => {
-                        leftContent.classList.add('animate');
-                    }, 100);
-                }
-
-                // Animate all skill cards with different delays
-                const skillCards = document.querySelectorAll('.skill-card');
-                skillCards.forEach((card, index) => {
-                    setTimeout(() => {
-                        card.classList.add('animate');
-                    }, (index + 2) * 200); // Staggered delay for each card
-                });
-
-                // Disconnect observer after animation
-                observer.unobserve(entry.target);
+                entry.target.classList.add('animate');
             }
         });
-    }, {
-        threshold: 0.2 // Trigger when 20% of the section is visible
+    }, observerOptions);
+
+    // Observe project items
+    projectItems.forEach((item, index) => {
+        item.style.animationDelay = `${index * 0.1}s`;
+        observer.observe(item);
     });
 
-    // Observe the skills section
-    const skillsSection = document.querySelector('.skills-section');
-    if (skillsSection) {
-        observer.observe(skillsSection);
-    }
+    // Initial animation for project items
+    setTimeout(() => {
+        projectItems.forEach(item => {
+            item.classList.add('animate');
+        });
+    }, 600);
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
 });
 
 
-// portfolio
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('slide-in');
-        }
-    });
-}, { threshold: 0.1 });
-
-const portfolioSection = document.querySelector('.section.project');
-if (portfolioSection) {
-    observer.observe(portfolioSection);
-}
-
 //Testimonial
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     const track = document.getElementById('testimonialTrack');
-//     const slides = track.children;
-//     const prevBtn = document.querySelector('.arrow-btn.prev');
-//     const nextBtn = document.querySelector('.arrow-btn.next');
-//     let currentSlide = 0;
-//     let isAutoScrolling = true;
-//     let autoScrollInterval;
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.getElementById('testimonialTrack');
+    const slides = track.children;
+    const prevBtn = document.querySelector('.arrow-btn.prev');
+    const nextBtn = document.querySelector('.arrow-btn.next');
+    let currentSlide = 0;
+    let isAutoScrolling = true;
+    let autoScrollInterval;
 
-//     function updateSlidePosition() {
-//         track.style.transform = `translateX(-${currentSlide * 100}%)`;
-//     }
+    function updateSlidePosition() {
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
 
-//     function moveToNextSlide() {
-//         currentSlide = (currentSlide + 1) % slides.length;
-//         updateSlidePosition();
-//     }
+    function moveToNextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateSlidePosition();
+    }
 
-//     function moveToPrevSlide() {
-//         currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-//         updateSlidePosition();
-//     }
+    function moveToPrevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        updateSlidePosition();
+    }
 
-//     function startAutoScroll() {
-//         autoScrollInterval = setInterval(moveToNextSlide, 5000);
-//     }
+    function startAutoScroll() {
+        autoScrollInterval = setInterval(moveToNextSlide, 5000);
+    }
 
-//     function pauseAutoScroll() {
-//         clearInterval(autoScrollInterval);
-//         isAutoScrolling = false;
-//         setTimeout(() => {
-//             if (!isAutoScrolling) {
-//                 startAutoScroll();
-//                 isAutoScrolling = true;
-//             }
-//         }, 10000);
-//     }
+    function pauseAutoScroll() {
+        clearInterval(autoScrollInterval);
+        isAutoScrolling = false;
+        setTimeout(() => {
+            if (!isAutoScrolling) {
+                startAutoScroll();
+                isAutoScrolling = true;
+            }
+        }, 10000);
+    }
 
-//     prevBtn.addEventListener('click', () => {
-//         moveToPrevSlide();
-//         pauseAutoScroll();
-//     });
+    prevBtn.addEventListener('click', () => {
+        moveToPrevSlide();
+        pauseAutoScroll();
+    });
 
-//     nextBtn.addEventListener('click', () => {
-//         moveToNextSlide();
-//         pauseAutoScroll();
-//     });
+    nextBtn.addEventListener('click', () => {
+        moveToNextSlide();
+        pauseAutoScroll();
+    });
 
-//     startAutoScroll();
-// });
+    startAutoScroll();
+});
 
 // Form validation
 document.addEventListener('DOMContentLoaded', function () {
@@ -353,68 +353,3 @@ scrollButton.addEventListener('click', () => {
     });
 });
 
-
-// Project filtering functionality
-document.addEventListener('DOMContentLoaded', function() {
-    // Get all filter buttons and project items
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const projectItems = document.querySelectorAll('.project-item');
-    
-    // Add click event to filter buttons
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            // Remove active class from all buttons
-            filterBtns.forEach(btn => btn.classList.remove('active'));
-            
-            // Add active class to clicked button
-            this.classList.add('active');
-            
-            // Get filter value
-            const filterValue = this.getAttribute('data-filter');
-            
-            // Filter projects
-            projectItems.forEach(item => {
-                if (filterValue === 'all') {
-                    item.classList.remove('hide');
-                } else {
-                    if (item.classList.contains(filterValue)) {
-                        item.classList.remove('hide');
-                    } else {
-                        item.classList.add('hide');
-                    }
-                }
-            });
-        });
-    });
-    
-    // Add animation to project cards on hover
-    const portfolioCards = document.querySelectorAll('.portfolio-card');
-    portfolioCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px)';
-            this.style.boxShadow = '0 15px 30px rgba(0, 33, 128, 0.1)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-            this.style.boxShadow = 'none';
-        });
-    });
-});
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    // This is needed if you want to pause on hover
-    const track = document.getElementById('testimonialTrack');
-    
-    if (track) {
-        track.addEventListener('mouseenter', function() {
-            this.style.animationPlayState = 'paused';
-        });
-        
-        track.addEventListener('mouseleave', function() {
-            this.style.animationPlayState = 'running';
-        });
-    }
-});
