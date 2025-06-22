@@ -932,13 +932,14 @@
 
 
 /*contact*/
+/*contact*/
 .contact-section {
     padding: 80px 0;
-    background: #fff;
+   
 }
 
 .contact-label {
-    color: #002180;
+    color: var(--text-secondary);
     font-weight: 500;
     display: inline-block;
     padding: 8px 16px;
@@ -947,7 +948,7 @@
 }
 
 .contact-intro {
-    color: #666;
+    color: var(--text-secondary);
     margin-top: 1rem;
 }
 
@@ -966,9 +967,26 @@
 .contact-info {
 
     padding-bottom: 20px;
+    color: var(--text-primary);
 
 }
 
+.contact-item a {
+    color: var(--text-primary) !important;
+}
+
+.contact-item p.text-dark {
+    color: var(--text-primary) !important;
+}
+
+.contact-item .text-muted {
+    color: var(--text-secondary) !important;
+}
+
+.contact-item a:hover {
+    color: var(--accent-blue) !important;
+    text-decoration: underline !important;
+}
 
 .form-control {
     padding: 12px 20px;
@@ -985,6 +1003,36 @@
 textarea.form-control {
     resize: none;
 }
+
+.contact-form .form-control {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+}
+
+.contact-form .form-control::placeholder {
+    color: var(--text-muted);
+    opacity: 1;
+}
+
+.contact-form .form-control:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-blue);
+    color: var(--text-primary);
+    box-shadow: 0 0 0 0.2rem rgba(0, 86, 255, 0.25);
+    outline: none;
+}
+
+.contact-form .form-control:hover {
+    border-color: var(--accent-blue);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
 
 
 /* Error styling */
@@ -1046,7 +1094,7 @@ textarea.form-control {
 
 .designer-credit {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-primary);
     text-align:center;
     padding-left: 0%;
 }
@@ -1063,7 +1111,7 @@ textarea.form-control {
 }
 
 .social-links a {
-    color: #666;
+    color: var(--text-primary);
     font-size: 20px;
     transition: all 0.3s;
 }
